@@ -1,0 +1,126 @@
+the colum : Report_dateis not in :cashflow
+the colum : Report_dateis not in :financeguideline
+the colum : Report_dateis not in :financeguideline
+the colum : Report_dateis not in :financeguideline
+the colum : Announcement_timeis not in :additionalstock
+the colum : Announcement_dateis not in :sharebonusfh
+the colum : Announcement_dateis not in :sharebonusfh
+the colum : Board_Secretaryis not in :publiccompany
+the colum : Faxis not in :publiccompany
+the colum : Emailis not in :publiccompany
+the colum : Company_websiteis not in :publiccompany
+the colum : Postcodeis not in :publiccompany
+the colum : Registered_addressis not in :publiccompany
+the colum : Office_addressis not in :publiccompany
+the colum : Company_profileis not in :publiccompany
+the colum : Business_scopeis not in :publiccompany
+the colum : Company_telephoneis not in :publiccompany
+the colum : Faxis not in :publiccompany
+the colum : Emailis not in :publiccompany
+the colum : Company_websiteis not in :publiccompany
+the colum : Company_telephoneis not in :publiccompany
+the colum : Faxis not in :publiccompany
+the colum : Report_dateis not in :stockstructure
+the colum : deadlineis not in :tenlargestshareholders
+the colum : deadlineis not in :tenlargestshareholders
+the colum : Shareholders_rankingis not in :tenlargestshareholders
+the colum : deadlineis not in :tenlargestshareholders
+the colum : The_number_of_sharesis not in :tenlargestshareholders
+the table is  companyrelatedsecurities
+set([])
+the table is  detailshareholders
+set([])
+the table is  accountagestructure
+set([])
+the table is  plate
+set([])
+the table is  footnote
+set([])
+the table is  financeguideline
+set(['Financial_year'])
+the table is  companyrelateddepartment
+set([])
+the table is  stockholder
+set([])
+the table is  inventorydetail
+set([])
+the table is  achievementnotice
+set([])
+the table is  tentradableshareholders
+set([])
+the table is  tenlargestshareholders
+set([])
+the table is  investmentrating
+set([])
+the table is  marketbulletin
+set([])
+the table is  profittrend
+set([])
+the table is  raiseexplanation
+set([])
+the table is  profitreport
+set([])
+the table is  earningprediction
+set([])
+the table is  restrictedsale
+set([])
+the table is  assetdevalue
+set([])
+the table is  newstock
+set([])
+the table is  fundstockholder
+set([])
+the table is  cashflowreport
+set([])
+the table is  balancesheet
+set([])
+the table is  paytax
+set([])
+the table is  sharebonuspg
+set([])
+the table is  taxratedetail
+set([])
+the table is  sharebonusfh
+set([])
+the table is  xsbfhpg
+set([])
+the table is  mainactivity
+set(['Field'])
+the table is  companyrelatedindex
+set([])
+the table is  incometrend
+set([])
+the table is  financesummary
+set([])
+the table is  supervisoryboard
+set([])
+the table is  earningtrend
+set([])
+the table is  additionalstock
+set([])
+the table is  collectfund
+set([])
+the table is  circulatestockholder
+set([])
+the table is  publiccompany
+set([])
+the table is  cashflow
+set([])
+the table is  benifitchange
+set([])
+the table is  incomecomposition
+set([])
+the table is  profittable
+set([])
+the table is  stockstructure
+set([])
+the table is  accountdetail
+set([])
+the table is  badaccount
+set([])
+the table is  balancereport
+set([])
+the table is  boardofdirectors
+set([])
+the table is  executives
+set([])

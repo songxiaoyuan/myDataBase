@@ -1,0 +1,1294 @@
+accountagestructure
+| Company_code                        | char(100)     | NO   | PRI | NULL    |       |
+| Announcement_date                   | date          | NO   | PRI | NULL    |       |
+| Account_age                         | varchar(100)  | NO   | PRI | NULL    |       |
+| Accounts_receivable_balances        | double(30,10) | YES  |     | NULL    |       |
+| Extraction_of_bad_debts             | double(30,10) | YES  |     | NULL    |       |
+| The_total_accounts_receivable_ratio | double(30,10) | YES  |     | NULL    |       |
+| unit                                | char(100)     | YES  |     | NULL    |       |
+
+accountdetail
+| Company_code      | char(100)     | NO   | PRI | NULL    |       |
+| Announcement_date | date          | NO   | PRI | NULL    |       |
+| Debtor_name       | varchar(100)  | NO   | PRI | NULL    |       |
+| Amount_owed       | double(30,10) | YES  |     | NULL    |       |
+| Default_time      | varchar(100)  | YES  |     | NULL    |       |
+| Reason_of_default | text          | YES  |     | NULL    |       |
+| unit              | char(100)     | YES  |     | NULL    |       |
+
+achievementnotice
+| Company_code                                     | char(100)     | NO   | PRI | NULL    |       |
+| Announcement_date                                | date          | NO   | PRI | NULL    |       |
+| Reporting_period                                 | date          | NO   | PRI | NULL    |       |
+| type                                             | char(100)     | YES  |     | NULL    |       |
+| Summary_of_results                               | text          | YES  |     | NULL    |       |
+| Content_of_results                               | text          | YES  |     | NULL    |       |
+| Earnings_per_share_for_the_same_period_last_year | double(30,10) | YES  |     | NULL    |       |
+
+additionalstock
+| Company_code                                      | char(100)     | NO   | PRI | NULL    |       |
+| Announcement_time                                 | date          | NO   | PRI | NULL    |       |
+| Additional_types                                  | char(100)     | YES  |     | NULL    |       |
+| Issue_price                                       | double(30,10) | YES  |     | NULL    |       |
+| Currency_name                                     | char(100)     | YES  |     | NULL    |       |
+| Total_funds_raised                                | double(30,10) | YES  |     | NULL    |       |
+| Issue_expenses                                    | double(30,10) | YES  |     | NULL    |       |
+| Issue_number                                      | double(30,10) | YES  |     | NULL    |       |
+| Scheme_schedule                                   | char(100)     | YES  |     | NULL    |       |
+| Number_of_public_release                          | double(30,10) | YES  |     | NULL    |       |
+| The_old_shareholders_to_placement_ratio           | double(30,10) | YES  |     | NULL    |       |
+| Whether_ex                                        | char(100)     | YES  |     | NULL    |       |
+| Ex_dividend_date                                  | double(30,10) | YES  |     | NULL    |       |
+| Listed_date                                       | date          | YES  |     | NULL    |       |
+| Additional_earnings_diluted                       | double(30,10) | YES  |     | NULL    |       |
+| Issuance_price_earnings_ratio_weighted            | double(30,10) | YES  |     | NULL    |       |
+| The_actual_funds_raised                           | double(30,10) | YES  |     | NULL    |       |
+| Release_mode                                      | char(100)     | YES  |     | NULL    |       |
+| Underwrite_manner                                 | char(100)     | YES  |     | NULL    |       |
+| The_number_issued_offline                         | double(30,10) | YES  |     | NULL    |       |
+| The_number_of_funds_to_the_fund                   | double(30,10) | YES  |     | NULL    |       |
+| Callback_number                                   | double(30,10) | YES  |     | NULL    |       |
+| Old_shareholders_effect_purchase_household        | double(30,10) | YES  |     | NULL    |       |
+| Old_shareholders_effect_purchase_share            | double(30,10) | YES  |     | NULL    |       |
+| Plan_announcement_date                            | date          | YES  |     | NULL    |       |
+| AnnouncementDateOfTheGeneralMeetingOfShareholders | date          | YES  |     | NULL    |       |
+| Issue_price_yuan                                  | double(30,10) | YES  |     | NULL    |       |
+| Issue_number_gu                                   | double(30,10) | YES  |     | NULL    |       |
+| Total_funds_raised_yuan                           | double(30,10) | YES  |     | NULL    |       |
+
+assetdevalue
+| Company_code                                            | char(100)     | NO   | PRI | NULL    |       |
+| Report_date                                             | date          | NO   | PRI | NULL    |       |
+| A_total_provision_for_bad_debts                         | double(30,10) | YES  |     | NULL    |       |
+| Other_accounts_receivable                               | double(30,10) | YES  |     | NULL    |       |
+| Short_term_investment_depreciation_reserve_total        | double(30,10) | YES  |     | NULL    |       |
+| stock_investment                                        | double(30,10) | YES  |     | NULL    |       |
+| Bond_investment                                         | double(30,10) | YES  |     | NULL    |       |
+| Total_inventory_impairment                              | double(30,10) | YES  |     | NULL    |       |
+| Stock_goods                                             | double(30,10) | YES  |     | NULL    |       |
+| Raw_material                                            | double(30,10) | YES  |     | NULL    |       |
+| Material_supplies                                       | double(30,10) | YES  |     | NULL    |       |
+| Low_value_consumables                                   | double(30,10) | YES  |     | NULL    |       |
+| ProvisionForImpairmentOfFinancialAssetsAvailableForSale | double(30,10) | YES  |     | NULL    |       |
+| Total_long_term_investment_impairment                   | double(30,10) | YES  |     | NULL    |       |
+| Impairment_of_long_term_equity_investment               | double(30,10) | YES  |     | NULL    |       |
+| Holding_to_maturity_investment_impairment               | double(30,10) | YES  |     | NULL    |       |
+| Investment_real_estate_impairment                       | double(30,10) | YES  |     | NULL    |       |
+| Total_impairment_of_fixed_assets                        | double(30,10) | YES  |     | NULL    |       |
+| Buildings_and_buildings                                 | double(30,10) | YES  |     | NULL    |       |
+| machinery_equipment                                     | double(30,10) | YES  |     | NULL    |       |
+| Provision_for_impairment_of_engineering_materials       | double(30,10) | YES  |     | NULL    |       |
+| Provision_for_impairment_of_production_in_construction  | double(30,10) | YES  |     | NULL    |       |
+| Productive_biological_assets_depreciation_preparation   | double(30,10) | YES  |     | NULL    |       |
+| Impairment_of_mature_productive_biological_assets       | double(30,10) | YES  |     | NULL    |       |
+| Provision_for_impairment_of_oil_and_gas_assets          | double(30,10) | YES  |     | NULL    |       |
+| Total_impairment_of_intangible_assets                   | double(30,10) | YES  |     | NULL    |       |
+| Patent_right                                            | double(30,10) | YES  |     | NULL    |       |
+| Trademark_rights                                        | double(30,10) | YES  |     | NULL    |       |
+| Impairment_of_goodwill                                  | double(30,10) | YES  |     | NULL    |       |
+| Total_entrusted_loan_impairment                         | double(30,10) | YES  |     | NULL    |       |
+| short_term                                              | double(30,10) | YES  |     | NULL    |       |
+| Long_term                                               | double(30,10) | YES  |     | NULL    |       |
+| Other                                                   | double(30,10) | YES  |     | NULL    |       |
+| Total                                                   | double(30,10) | YES  |     | NULL    |       |
+| Accounts_receivable                                     | double(30,10) | YES  |     | NULL    |       |
+
+badaccount
+| Company_code                                            | char(100)     | NO   | PRI | NULL    |       |
+| Report_date                                             | date          | NO   | PRI | NULL    |       |
+| A_total_provision_for_bad_debts                         | double(30,10) | YES  |     | NULL    |       |
+| Accounts_receivable                                     | double(30,10) | YES  |     | NULL    |       |
+| Other_accounts_receivable                               | double(30,10) | YES  |     | NULL    |       |
+| Short_term_investment_depreciation_reserve_total        | double(30,10) | YES  |     | NULL    |       |
+| stock_investment                                        | double(30,10) | YES  |     | NULL    |       |
+| Bond_investment                                         | double(30,10) | YES  |     | NULL    |       |
+| Total_inventory_impairment                              | double(30,10) | YES  |     | NULL    |       |
+| Stock_goods                                             | double(30,10) | YES  |     | NULL    |       |
+| Raw_material                                            | double(30,10) | YES  |     | NULL    |       |
+| Material_supplies                                       | double(30,10) | YES  |     | NULL    |       |
+| Low_value_consumables                                   | double(30,10) | YES  |     | NULL    |       |
+| ProvisionForImpairmentOfFinancialAssetsAvailableForSale | double(30,10) | YES  |     | NULL    |       |
+| Total_long_term_investment_impairment                   | double(30,10) | YES  |     | NULL    |       |
+| Impairment_of_long_term_equity_investment               | double(30,10) | YES  |     | NULL    |       |
+| Holding_to_maturity_investment_impairment               | double(30,10) | YES  |     | NULL    |       |
+| Investment_real_estate_impairment                       | double(30,10) | YES  |     | NULL    |       |
+| Total_impairment_of_fixed_assets                        | double(30,10) | YES  |     | NULL    |       |
+| Buildings_and_buildings                                 | double(30,10) | YES  |     | NULL    |       |
+| machinery_equipment                                     | double(30,10) | YES  |     | NULL    |       |
+| Provision_for_impairment_of_engineering_materials       | double(30,10) | YES  |     | NULL    |       |
+| Provision_for_impairment_of_production_in_construction  | double(30,10) | YES  |     | NULL    |       |
+| Productive_biological_assets_depreciation_preparation   | double(30,10) | YES  |     | NULL    |       |
+| Impairment_of_mature_productive_biological_assets       | double(30,10) | YES  |     | NULL    |       |
+| Provision_for_impairment_of_oil_and_gas_assets          | double(30,10) | YES  |     | NULL    |       |
+| Total_impairment_of_intangible_assets                   | double(30,10) | YES  |     | NULL    |       |
+| Patent_right                                            | double(30,10) | YES  |     | NULL    |       |
+| Trademark_rights                                        | double(30,10) | YES  |     | NULL    |       |
+| Impairment_of_goodwill                                  | double(30,10) | YES  |     | NULL    |       |
+| Total_entrusted_loan_impairment                         | double(30,10) | YES  |     | NULL    |       |
+| short_term                                              | double(30,10) | YES  |     | NULL    |       |
+| Long_term                                               | double(30,10) | YES  |     | NULL    |       |
+| Other                                                   | double(30,10) | YES  |     | NULL    |       |
+| Total                                                   | double(30,10) | YES  |     | NULL    |       |
+
+balancereport
+| Report_date    | date      | NO   | PRI | NULL    |       |
+| Company_code   | char(100) | NO   | PRI | NULL    |       |
+| Report_content | text      | YES  |     | NULL    |       |
+
+balancesheet
+| Stock_code                                           | char(100)     | YES  |     | NULL    |       |
+| Report_date                                          | date          | NO   | PRI | NULL    |       |
+| unit                                                 | char(100)     | YES  |     | NULL    |       |
+| assets                                               | double(30,10) | YES  |     | NULL    |       |
+| Central_bank_deposit                                 | double(30,10) | YES  |     | NULL    |       |
+| Settlement_reserve                                   | double(30,10) | YES  |     | NULL    |       |
+| Noble_metal                                          | double(30,10) | YES  |     | NULL    |       |
+| Deposit_interbank_payments                           | double(30,10) | YES  |     | NULL    |       |
+| Lendings_to_Banks_Other_Financial_Institutions       | double(30,10) | YES  |     | NULL    |       |
+| the_demolition_release_of_the_same_industry          | double(30,10) | YES  |     | NULL    |       |
+| Open_finance_company                                 | double(30,10) | YES  |     | NULL    |       |
+| Deposit_money_bank                                   | double(30,10) | YES  |     | NULL    |       |
+| Cash_deposit_fund                                    | double(30,10) | YES  |     | NULL    |       |
+| Derivative_financial_instruments_assets              | double(30,10) | YES  |     | NULL    |       |
+| Buying_back_the_sale_of_financial_assets             | double(30,10) | YES  |     | NULL    |       |
+| discount                                             | double(30,10) | YES  |     | NULL    |       |
+| bill_purchased                                       | double(30,10) | YES  |     | NULL    |       |
+| Loans_and_advances_to_customers_for_loans            | double(30,10) | YES  |     | NULL    |       |
+| Less_provision_for_loan_loss                         | double(30,10) | YES  |     | NULL    |       |
+| Agency_business_assets                               | double(30,10) | YES  |     | NULL    |       |
+| Investment_subsidiary                                | double(30,10) | YES  |     | NULL    |       |
+| Receivable_investment                                | double(30,10) | YES  |     | NULL    |       |
+| Prepaid_expenses                                     | double(30,10) | YES  |     | NULL    |       |
+| Net_fixed_assets                                     | double(30,10) | YES  |     | NULL    |       |
+| To_deal_with_foreclosed_assets                       | double(30,10) | YES  |     | NULL    |       |
+| Foreclosed_assets_impairment                         | double(30,10) | YES  |     | NULL    |       |
+| To_deal_with_the_net_assets                          | double(30,10) | YES  |     | NULL    |       |
+| Deferred_tax_assets                                  | double(30,10) | YES  |     | NULL    |       |
+| Other_assets                                         | double(30,10) | YES  |     | NULL    |       |
+| SpecialPreparationTheDisposalNonPerformingAssets     | double(30,10) | YES  |     | NULL    |       |
+| liabilities                                          | double(30,10) | YES  |     | NULL    |       |
+| Borrowing_from_the_Central_Bank                      | double(30,10) | YES  |     | NULL    |       |
+| Issue_currency_debt                                  | double(30,10) | YES  |     | NULL    |       |
+| Deposit_and_interbank_borrowing                      | double(30,10) | YES  |     | NULL    |       |
+| Interbank_deposits                                   | double(30,10) | YES  |     | NULL    |       |
+| Loans_from_other_banks                               | double(30,10) | YES  |     | NULL    |       |
+| LaSalle_deposit_of_money                             | double(30,10) | YES  |     | NULL    |       |
+| Foreign_government_loans                             | double(30,10) | YES  |     | NULL    |       |
+| Derivative_financial_instruments_liabilities         | double(30,10) | YES  |     | NULL    |       |
+| Sold_under_agreements_to_repurchase                  | double(30,10) | YES  |     | NULL    |       |
+| Customer_deposits                                    | double(30,10) | YES  |     | NULL    |       |
+| Bill_financing                                       | double(30,10) | YES  |     | NULL    |       |
+| Remittance_and_temporary_deposits                    | double(30,10) | YES  |     | NULL    |       |
+| Accrued_expenses                                     | double(30,10) | YES  |     | NULL    |       |
+| Issuance_of_certificates_of_deposit                  | double(30,10) | YES  |     | NULL    |       |
+| Outward_remittance                                   | double(30,10) | YES  |     | NULL    |       |
+| Welfare_payable                                      | double(30,10) | YES  |     | NULL    |       |
+| Taxes_payable                                        | double(30,10) | YES  |     | NULL    |       |
+| Accounts_payable                                     | double(30,10) | YES  |     | NULL    |       |
+| Agency_business_liabilities                          | double(30,10) | YES  |     | NULL    |       |
+| Deferred_income                                      | double(30,10) | YES  |     | NULL    |       |
+| Subordinated_bonds                                   | double(30,10) | YES  |     | NULL    |       |
+| Other_liabilities                                    | double(30,10) | YES  |     | NULL    |       |
+| Paid_in_capital                                      | double(30,10) | YES  |     | NULL    |       |
+| AvailableForSaleInvestmentsUnrealizedGainsAndLosses  | double(30,10) | YES  |     | NULL    |       |
+| HeldToMaturityInvestmentsAreNotCarriedForwardLosses  | double(30,10) | YES  |     | NULL    |       |
+| Treasury_shares                                      | double(30,10) | YES  |     | NULL    |       |
+| General_risk_preparation                             | double(30,10) | YES  |     | NULL    |       |
+| Trust_compensation_reserve                           | double(30,10) | YES  |     | NULL    |       |
+| The_proposed_distribution_of_cash_dividends          | double(30,10) | YES  |     | NULL    |       |
+| Currency_translation_differences                     | double(30,10) | YES  |     | NULL    |       |
+| Other_reserves                                       | double(30,10) | YES  |     | NULL    |       |
+| Attributable_to_the_equity_holders_of_the_parent     | double(30,10) | YES  |     | NULL    |       |
+| Total_owners_equity                                  | double(30,10) | YES  |     | NULL    |       |
+| Total_liabilities_and_owners                         | double(30,10) | YES  |     | NULL    |       |
+| Year                                                 | date          | YES  |     | NULL    |       |
+| Reporting_period                                     | date          | YES  |     | NULL    |       |
+| Monetary_resources                                   | double(30,10) | YES  |     | NULL    |       |
+| Trading_securities                                   | double(30,10) | YES  |     | NULL    |       |
+| Bill_receivable                                      | double(30,10) | YES  |     | NULL    |       |
+| Accounts_receivable                                  | double(30,10) | YES  |     | NULL    |       |
+| Advance_payment                                      | double(30,10) | YES  |     | NULL    |       |
+| Receivable_other                                     | double(30,10) | YES  |     | NULL    |       |
+| Accounts_receivable_associate_company                | double(30,10) | YES  |     | NULL    |       |
+| Interest_receivable                                  | double(30,10) | YES  |     | NULL    |       |
+| Dividends_receivable                                 | double(30,10) | YES  |     | NULL    |       |
+| Stock                                                | double(30,10) | YES  |     | NULL    |       |
+| Among_them_the_consumption_of_biological_assets      | double(30,10) | YES  |     | NULL    |       |
+| Non_current_assets_due_within_one_year               | double(30,10) | YES  |     | NULL    |       |
+| Other_current_assets                                 | double(30,10) | YES  |     | NULL    |       |
+| Total_current_assets                                 | double(30,10) | YES  |     | NULL    |       |
+| Financial_assets_available_for_sale                  | double(30,10) | YES  |     | NULL    |       |
+| Held_to_maturity_investments                         | double(30,10) | YES  |     | NULL    |       |
+| Long_term_receivables                                | double(30,10) | YES  |     | NULL    |       |
+| Long_term_equity_investment                          | double(30,10) | YES  |     | NULL    |       |
+| Investment_real_estate                               | double(30,10) | YES  |     | NULL    |       |
+| Fixed_assets                                         | double(30,10) | YES  |     | NULL    |       |
+| Construction_in_process                              | double(30,10) | YES  |     | NULL    |       |
+| Engineering_materials                                | double(30,10) | YES  |     | NULL    |       |
+| Fixed_assets_liquidation                             | double(30,10) | YES  |     | NULL    |       |
+| Productive_biological_assets                         | double(30,10) | YES  |     | NULL    |       |
+| Oil_and_gas_assets                                   | double(30,10) | YES  |     | NULL    |       |
+| Immaterial_assets                                    | double(30,10) | YES  |     | NULL    |       |
+| Development_expenditure                              | double(30,10) | YES  |     | NULL    |       |
+| Goodwill                                             | double(30,10) | YES  |     | NULL    |       |
+| Long_term_prepaid_expenses                           | double(30,10) | YES  |     | NULL    |       |
+| Other_non_current_assets                             | double(30,10) | YES  |     | NULL    |       |
+| Total_non_current_assets                             | double(30,10) | YES  |     | NULL    |       |
+| Total_assets                                         | double(30,10) | YES  |     | NULL    |       |
+| Short_term_loan                                      | double(30,10) | YES  |     | NULL    |       |
+| Transaction_financial_liabilities                    | double(30,10) | YES  |     | NULL    |       |
+| Notes_payable                                        | double(30,10) | YES  |     | NULL    |       |
+| Payable                                              | double(30,10) | YES  |     | NULL    |       |
+| Payroll_payable                                      | double(30,10) | YES  |     | NULL    |       |
+| Payable_taxes_and_fees                               | double(30,10) | YES  |     | NULL    |       |
+| Interest_payable                                     | double(30,10) | YES  |     | NULL    |       |
+| Dividends_payable                                    | double(30,10) | YES  |     | NULL    |       |
+| Other_payable                                        | double(30,10) | YES  |     | NULL    |       |
+| Associate_company_payable                            | double(30,10) | YES  |     | NULL    |       |
+| Non_current_liabilities_due_within_one_year          | double(30,10) | YES  |     | NULL    |       |
+| Other_current_liabilities                            | double(30,10) | YES  |     | NULL    |       |
+| Total_Current_Liabilities                            | double(30,10) | YES  |     | NULL    |       |
+| Long_term_loan                                       | double(30,10) | YES  |     | NULL    |       |
+| Bond_payable                                         | double(30,10) | YES  |     | NULL    |       |
+| Long_term_accounts_payable                           | double(30,10) | YES  |     | NULL    |       |
+| Special_payment                                      | double(30,10) | YES  |     | NULL    |       |
+| Estimated_liabilities                                | double(30,10) | YES  |     | NULL    |       |
+| Deferred_tax_liability                               | double(30,10) | YES  |     | NULL    |       |
+| Other_non_current_liabilities                        | double(30,10) | YES  |     | NULL    |       |
+| Total_Non_current_Liabilities                        | double(30,10) | YES  |     | NULL    |       |
+| Total_liabilities                                    | double(30,10) | YES  |     | NULL    |       |
+| Paid_in_capital_or_share_capital                     | double(30,10) | YES  |     | NULL    |       |
+| Capital_reserve                                      | double(30,10) | YES  |     | NULL    |       |
+| Surplus_public_accumulation                          | double(30,10) | YES  |     | NULL    |       |
+| Less_inventory_stock                                 | double(30,10) | YES  |     | NULL    |       |
+| Undistributed_profit                                 | double(30,10) | YES  |     | NULL    |       |
+| Minority_equity                                      | double(30,10) | YES  |     | NULL    |       |
+| Translation_difference_of_foreign_currency_statement | double(30,10) | YES  |     | NULL    |       |
+| Non_normal_operating_income_adjustment               | double(30,10) | YES  |     | NULL    |       |
+| Total_owners_or_shareHolder_equity                   | double(30,10) | YES  |     | NULL    |       |
+| Total_shareHolder_equity                             | double(30,10) | YES  |     | NULL    |       |
+| Deferred_tax_acount                                  | double(30,10) | YES  |     | NULL    |       |
+| Total_liabilities_or_owners                          | double(30,10) | YES  |     | NULL    |       |
+| Advance_payment_account                              | double(30,10) | YES  |     | NULL    |       |
+| Company_code                                         | char(100)     | NO   | PRI | NULL    |       |
+
+benifitchange
+| Company_code                                | char(100)     | NO   | PRI | NULL    |       |
+| Report_date                                 | date          | NO   | PRI | NULL    |       |
+| Initial_period_share_capital                | double(30,10) | YES  |     | NULL    |       |
+| Current_increase_share_capital              | double(30,10) | YES  |     | NULL    |       |
+| Current_reduction_share_capital             | double(30,10) | YES  |     | NULL    |       |
+| Final_number_share_capital                  | double(30,10) | YES  |     | NULL    |       |
+| Reason_for_change_share_capital             | double(30,10) | YES  |     | NULL    |       |
+| Initial_period_capital_reserve              | double(30,10) | YES  |     | NULL    |       |
+| Current_increase_capital_reserve            | double(30,10) | YES  |     | NULL    |       |
+| Current_reduction_capital_reserve           | double(30,10) | YES  |     | NULL    |       |
+| Final_number_capital_reserve                | double(30,10) | YES  |     | NULL    |       |
+| Reason_for_change_capital_reserve           | double(30,10) | YES  |     | NULL    |       |
+| Initial_period_surplus_reserve              | double(30,10) | YES  |     | NULL    |       |
+| Current_increase_surplus_reserve            | double(30,10) | YES  |     | NULL    |       |
+| Current_reduction_surplus_reserve           | double(30,10) | YES  |     | NULL    |       |
+| Final_number_surplus_reserve                | double(30,10) | YES  |     | NULL    |       |
+| Reason_for_change_surplus_reserve           | double(30,10) | YES  |     | NULL    |       |
+| Initial_period_statutory_welfare_reserve    | double(30,10) | YES  |     | NULL    |       |
+| Current_increase_statutory_welfare_reserve  | double(30,10) | YES  |     | NULL    |       |
+| Current_reduction_statutory_welfare_reserve | double(30,10) | YES  |     | NULL    |       |
+| Final_number_statutory_welfare_reserve      | double(30,10) | YES  |     | NULL    |       |
+| Reason_for_change_statutory_welfare_reserve | double(30,10) | YES  |     | NULL    |       |
+| Initial_period_noassign_profit              | double(30,10) | YES  |     | NULL    |       |
+| Current_increase_noassign_profit            | double(30,10) | YES  |     | NULL    |       |
+| Current_reduction_noassign_profit           | double(30,10) | YES  |     | NULL    |       |
+| Final_number_noassign_profit                | double(30,10) | YES  |     | NULL    |       |
+| Reason_for_change_noassign_profit           | double(30,10) | YES  |     | NULL    |       |
+| Initial_period_total_equity                 | double(30,10) | YES  |     | NULL    |       |
+| Current_increase_total_equity               | double(30,10) | YES  |     | NULL    |       |
+| Current_reduction_total_equity              | double(30,10) | YES  |     | NULL    |       |
+| Final_number_total_equity                   | double(30,10) | YES  |     | NULL    |       |
+| Date_of_publication                         | date          | YES  |     | NULL    |       |
+
+boardofdirectors
+| Company_code        | char(100) | NO   | PRI | NULL    |       |
+| name                | char(100) | NO   | PRI | NULL    |       |
+| post                | char(100) | NO   | PRI | NULL    |       |
+| Date_of_appointment | date      | NO   | PRI | NULL    |       |
+| Date_of_separation  | date      | YES  |     | NULL    |       |
+
+cashflow
+| Report_date                                             | date          | NO   | PRI | NULL    |       |
+| unit                                                    | char(100)     | YES  |     | NULL    |       |
+| Cash_flows_from_operating_activities                    | double(30,10) | YES  |     | NULL    |       |
+| TheNetDecreaseAmountOfLoansAdvancesToCustomer           | double(30,10) | YES  |     | NULL    |       |
+| Customer_deposits_and_interbank_deposits_net_increase   | double(30,10) | YES  |     | NULL    |       |
+| Customer_deposits                                       | double(30,10) | YES  |     | NULL    |       |
+| BanksAndOtherFinancialInstitutionsToDepositsLoans       | double(30,10) | YES  |     | NULL    |       |
+| Net_deposits_from_banks_other_financial_institutions    | double(30,10) | YES  |     | NULL    |       |
+| The_inflow_of_capital_borrowed_cash                     | double(30,10) | YES  |     | NULL    |       |
+| Net_lending_funds_recovered                             | double(30,10) | YES  |     | NULL    |       |
+| Net_proceeds_from_the_sale_of                           | double(30,10) | YES  |     | NULL    |       |
+| Net_purchases_of_resale_items                           | double(30,10) | YES  |     | NULL    |       |
+| NetIncreaseInTheDisposalOfTradingFinancialAssets        | double(30,10) | YES  |     | NULL    |       |
+| Cash_for_interest_commission_commission                 | double(30,10) | YES  |     | NULL    |       |
+| Receive_interest                                        | double(30,10) | YES  |     | NULL    |       |
+| Received_fee                                            | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_a_financial_enterprise               | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_intermediate_business_income         | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_net_exchange                         | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_other_operating_net_income           | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_deposit                              | double(30,10) | YES  |     | NULL    |       |
+| Entrusted_funds_received                                | double(30,10) | YES  |     | NULL    |       |
+| Precious_metal_cash_inflows                             | double(30,10) | YES  |     | NULL    |       |
+| Discounted_cash_received                                | double(30,10) | YES  |     | NULL    |       |
+| Other_liabilities_to_increase_the_inflow_of_cash        | double(30,10) | YES  |     | NULL    |       |
+| Recover_loans_receivables_written_off_previous_year     | double(30,10) | YES  |     | NULL    |       |
+| Other_cash_payable_to_reduce_the_outflow                | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_disposal_of_foreclosed_assets        | double(30,10) | YES  |     | NULL    |       |
+| Net_increase_in_loans_and_advances                      | double(30,10) | YES  |     | NULL    |       |
+| Net_increase_in_money_deposited_by_the_central_bank     | double(30,10) | YES  |     | NULL    |       |
+| The_central_bank_deposit                                | double(30,10) | YES  |     | NULL    |       |
+| Deposits_from_banks_other_institutions                  | double(30,10) | YES  |     | NULL    |       |
+| Net_cash_outflow_placements                             | double(30,10) | YES  |     | NULL    |       |
+| Repayment_of_central_bank_borrowings                    | double(30,10) | YES  |     | NULL    |       |
+| Payment_of_deposit                                      | double(30,10) | YES  |     | NULL    |       |
+| Reduce_net_deposits_in_same_industry_other_institutions | double(30,10) | YES  |     | NULL    |       |
+| The_repayment_of_banks_other_institutions_into_the_net  | double(30,10) | YES  |     | NULL    |       |
+| Net_sales_to_repay                                      | double(30,10) | YES  |     | NULL    |       |
+| Cash_for_investment_in_securities                       | double(30,10) | YES  |     | NULL    |       |
+| Net_purchases_of_resale                                 | double(30,10) | YES  |     | NULL    |       |
+| NetReductionInDisposalAvailableForSaleFinancialAssets   | double(30,10) | YES  |     | NULL    |       |
+| Cash_for_payment_of_interest_commission                 | double(30,10) | YES  |     | NULL    |       |
+| Interest_paid                                           | double(30,10) | YES  |     | NULL    |       |
+| Cash_paid_for_handling_expenses                         | double(30,10) | YES  |     | NULL    |       |
+| Operating_expenses_paid_in_cash                         | double(30,10) | YES  |     | NULL    |       |
+| Net_cash_in_exchange_with_financial_institutions        | double(30,10) | YES  |     | NULL    |       |
+| Discounted_cash                                         | double(30,10) | YES  |     | NULL    |       |
+| Write_off_bad_loans_and_interest_recovery               | double(30,10) | YES  |     | NULL    |       |
+| Reduce_the_amount_of_commission_and_agency_business     | double(30,10) | YES  |     | NULL    |       |
+| Precious_metal_cash_outflow                             | double(30,10) | YES  |     | NULL    |       |
+| Net_reduction_in_borrowing                              | double(30,10) | YES  |     | NULL    |       |
+| Cash_for_other_assets_to_reduce_expenses                | double(30,10) | YES  |     | NULL    |       |
+| Other_receivables_to_reduce_cash_back                   | double(30,10) | YES  |     | NULL    |       |
+| Second_Cash_flow_from_investing_activities              | double(30,10) | YES  |     | NULL    |       |
+| The_cash_received_from_a_dividend_or_profit             | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_bond_interest_income                 | double(30,10) | YES  |     | NULL    |       |
+| CashReceivedFromDisposalFixedIntangibleOtherAssets      | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_the_disposal_of_equity_investment    | double(30,10) | YES  |     | NULL    |       |
+| NetCashReceivedFromSubsidiariesOtherBusinessUnits       | double(30,10) | YES  |     | NULL    |       |
+| Cash_inflow_from_investment_activities                  | double(30,10) | YES  |     | NULL    |       |
+| Equity_investments_to_increase_cash_payments            | double(30,10) | YES  |     | NULL    |       |
+| Cash_paid_by_bond_investment                            | double(30,10) | YES  |     | NULL    |       |
+| NetCashPaidForPurchaseSubsidiariesAssociateJointVenture | double(30,10) | YES  |     | NULL    |       |
+| Increase_the_cash_paid_in_construction_projects         | double(30,10) | YES  |     | NULL    |       |
+| Other_cash_paid_related_to_investment_activities        | double(30,10) | YES  |     | NULL    |       |
+| Cash_flows_from_financing_activities                    | double(30,10) | YES  |     | NULL    |       |
+| Absorption_of_cash_from_investment                      | double(30,10) | YES  |     | NULL    |       |
+| TheCashThatIsAbsorbedByTheSecuritizationOfAssets        | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_issuing_bonds                        | double(30,10) | YES  |     | NULL    |       |
+| The_cash_received_from_issuance_of_subordinated_bonds   | double(30,10) | YES  |     | NULL    |       |
+| Increase_the_cash_received_from_equity_capital          | double(30,10) | YES  |     | NULL    |       |
+| cash_paid_to_pay_interest                               | double(30,10) | YES  |     | NULL    |       |
+| Cash_paid_for_debt                                      | double(30,10) | YES  |     | NULL    |       |
+| Pay_the_cost_of_issuing_new_shares                      | double(30,10) | YES  |     | NULL    |       |
+| The_impact_of_exchange_rate_changes_on_cash             | double(30,10) | YES  |     | NULL    |       |
+| Balance_of_cash_and_equivalents_at_the_begin            | double(30,10) | YES  |     | NULL    |       |
+| Balance_of_cash_and_equivalents_at_the_end              | double(30,10) | YES  |     | NULL    |       |
+| Note_appended                                           | double(30,10) | YES  |     | NULL    |       |
+| Net_profit                                              | double(30,10) | YES  |     | NULL    |       |
+| Minority_shareholder_returns                            | double(30,10) | YES  |     | NULL    |       |
+| Provision_for_impairment_of_assets                      | double(30,10) | YES  |     | NULL    |       |
+| Provision_for_bad_debts                                 | double(30,10) | YES  |     | NULL    |       |
+| Provision_for_loan_loss                                 | double(30,10) | YES  |     | NULL    |       |
+| Rush_back_to_prepare_for_impairment_of_same_industry    | double(30,10) | YES  |     | NULL    |       |
+| Fixed_depreciation_oil_gas_productive_biological_assets | double(30,10) | YES  |     | NULL    |       |
+| Depreciation_of_investment_real_estate                  | double(30,10) | YES  |     | NULL    |       |
+| Amortization_of_intangible_deferred_other_assets        | double(30,10) | YES  |     | NULL    |       |
+| Amortization_of_intangible_assets                       | double(30,10) | YES  |     | NULL    |       |
+| Amortization_of_long_term_prepaid_expenses              | double(30,10) | YES  |     | NULL    |       |
+| Long_term_assets_amortization                           | double(30,10) | YES  |     | NULL    |       |
+| Disposal_of_fixed_intangible_other_long_term_assets     | double(30,10) | YES  |     | NULL    |       |
+| Disposal_of_investment_property_losses                  | double(30,10) | YES  |     | NULL    |       |
+| Losses_on_scrapping_of_fixed_assets                     | double(30,10) | YES  |     | NULL    |       |
+| Financial_expenses                                      | double(30,10) | YES  |     | NULL    |       |
+| Investment_losses                                       | double(30,10) | YES  |     | NULL    |       |
+| Changes_in_fair_value                                   | double(30,10) | YES  |     | NULL    |       |
+| Exchange_gains_and_losses                               | double(30,10) | YES  |     | NULL    |       |
+| Net_profit_and_loss_of_derivative_financial_instruments | double(30,10) | YES  |     | NULL    |       |
+| Discount_return                                         | double(30,10) | YES  |     | NULL    |       |
+| Inventory_reduction                                     | double(30,10) | YES  |     | NULL    |       |
+| Reduction_of_loan                                       | double(30,10) | YES  |     | NULL    |       |
+| Increase_in_deposits                                    | double(30,10) | YES  |     | NULL    |       |
+| The_net_lending_money                                   | double(30,10) | YES  |     | NULL    |       |
+| Decrease_in_financial_assets                            | double(30,10) | YES  |     | NULL    |       |
+| Expected_to_increase_liabilities                        | double(30,10) | YES  |     | NULL    |       |
+| Received_payments_have_been_written_off                 | double(30,10) | YES  |     | NULL    |       |
+| Decrease_in_deferred_tax_assets                         | double(30,10) | YES  |     | NULL    |       |
+| Increase_in_deferred_income_tax_liabilities             | double(30,10) | YES  |     | NULL    |       |
+| Increase_in_operating_receivables                       | double(30,10) | YES  |     | NULL    |       |
+| Increase_in_operating_payables                          | double(30,10) | YES  |     | NULL    |       |
+| Decrease_in_operating_other_assets                      | double(30,10) | YES  |     | NULL    |       |
+| The_increase_in_other_operating_liabilities             | double(30,10) | YES  |     | NULL    |       |
+| Fixed_assets_to_repay_debt                              | double(30,10) | YES  |     | NULL    |       |
+| Investment_debt                                         | double(30,10) | YES  |     | NULL    |       |
+| Investment_using_fixed_assets                           | double(30,10) | YES  |     | NULL    |       |
+| Conversion_of_debt_into_capital                         | double(30,10) | YES  |     | NULL    |       |
+| Convertible_bonds_due_within_one_year                   | double(30,10) | YES  |     | NULL    |       |
+| The_leased_assets                                       | double(30,10) | YES  |     | NULL    |       |
+| Other_activities_not_involve_cash_payments_of_amounts   | double(30,10) | YES  |     | NULL    |       |
+| Closing_balance_of_cash                                 | double(30,10) | YES  |     | NULL    |       |
+| Initial_balance_of_cash                                 | double(30,10) | YES  |     | NULL    |       |
+| Closing_balance_of_cash_equivalents                     | double(30,10) | YES  |     | NULL    |       |
+| Beginning_balance_of_cash_equivalents                   | double(30,10) | YES  |     | NULL    |       |
+| Year                                                    | date          | YES  |     | NULL    |       |
+| Cash_received_from_the_sale_of_goods_and_services       | double(30,10) | YES  |     | NULL    |       |
+| Refunds_of_taxes                                        | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_other_operating_activities           | double(30,10) | YES  |     | NULL    |       |
+| Cash_inflows_from_operating_activities                  | double(30,10) | YES  |     | NULL    |       |
+| Cash_for_goods_and_labor_services                       | double(30,10) | YES  |     | NULL    |       |
+| Payment_of_cash_paid_to_employees_and_employees         | double(30,10) | YES  |     | NULL    |       |
+| Payments_of_all_types_of_taxes                          | double(30,10) | YES  |     | NULL    |       |
+| Payment_of_other_cash_relating_to_operating_activities  | double(30,10) | YES  |     | NULL    |       |
+| Operating_cash_outflowsubtotal                          | double(30,10) | YES  |     | NULL    |       |
+| Net_cash_flows_from_operating_activities                | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_investment                           | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_investment_income                    | double(30,10) | YES  |     | NULL    |       |
+| NetCashForFixedIntangibleAndOtherLongTermAssets         | double(30,10) | YES  |     | NULL    |       |
+| Net_cash_from_subsidiaries_and_other_business_units     | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_other_investment_activities          | double(30,10) | YES  |     | NULL    |       |
+| Investment_cash_flow_subtotal                           | double(30,10) | YES  |     | NULL    |       |
+| Cash_for_fixed_intangible_and_other_long_term_assets    | double(30,10) | YES  |     | NULL    |       |
+| Cash_paid_for_investment                                | double(30,10) | YES  |     | NULL    |       |
+| Net_cash_paid_by_subsidiaries_and_other_business_units  | double(30,10) | YES  |     | NULL    |       |
+| Payment_of_other_cash_related_to_investment_activities  | double(30,10) | YES  |     | NULL    |       |
+| Cash_outflow_for_investment_activities                  | double(30,10) | YES  |     | NULL    |       |
+| Net_cash_flow_from_investing_activities                 | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_absorbing_investment                 | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_loan                                 | double(30,10) | YES  |     | NULL    |       |
+| Cash_received_from_other_financing_activities           | double(30,10) | YES  |     | NULL    |       |
+| Cash_inflow_from_financing_activities                   | double(30,10) | YES  |     | NULL    |       |
+| Cash_for_dividends_profits_interest_payments            | double(30,10) | YES  |     | NULL    |       |
+| Other_cash_related_to_financing_activities              | double(30,10) | YES  |     | NULL    |       |
+| Cash_outflow_for_financing_activities                   | double(30,10) | YES  |     | NULL    |       |
+| Net_cash_flows_from_financing_activities                | double(30,10) | YES  |     | NULL    |       |
+| Other_reasons_for_the_impact_of_cash                    | double(30,10) | YES  |     | NULL    |       |
+| Net_increase_in_cash_and_cash_equivalents               | double(30,10) | YES  |     | NULL    |       |
+| Stock_code                                              | char(100)     | YES  |     | NULL    |       |
+| ImpactOfExchangeRateChangesOnCashAndEquivalents         | double(30,10) | YES  |     | NULL    |       |
+| BalanceOfCashAndEquivalentsAtTheBeginPlus               | double(30,10) | YES  |     | NULL    |       |
+| Balance_of_cash_and_equivalents_at_the_endPlus          | double(30,10) | YES  |     | NULL    |       |
+| Cash_paid_for_interest                                  | double(30,10) | YES  |     | NULL    |       |
+| Cash_paid_for_dividends_profits_interest                | double(30,10) | YES  |     | NULL    |       |
+| CashReceivedFromOtherFinancingActivities                | double(30,10) | YES  |     | NULL    |       |
+| NetCashFlowsFromOperatingActivities                     | double(30,10) | YES  |     | NULL    |       |
+| NetIncreaseInCashAndCashEquivalents                     | double(30,10) | YES  |     | NULL    |       |
+| Company_code                                            | char(100)     | NO   | PRI | NULL    |       |
+| Net_increase_in_borrowings_to_the_central_bank          | double(30,10) | YES  |     | NULL    |       |
+
+cashflowreport
+| Report_date    | date      | NO   | PRI | NULL    |       |
+| Company_code   | char(100) | NO   | PRI | NULL    |       |
+| Report_content | text      | YES  |     | NULL    |       |
+
+circulatestockholder
+| Company_code        | char(100)     | NO   | PRI | NULL    |       |
+| deadline            | date          | NO   | PRI | NULL    |       |
+| Announcement_date   | date          | YES  |     | NULL    |       |
+| Number              | char(100)     | NO   | PRI | NULL    |       |
+| Name_of_shareholder | varchar(100)  | YES  |     | NULL    |       |
+| Number_of_shares    | double(30,10) | YES  |     | NULL    |       |
+| Shareholding_ratio  | double(30,10) | YES  |     | NULL    |       |
+| Equity_nature       | varchar(100)  | YES  |     | NULL    |       |
+
+collectfund
+| Company_code                      | char(100)     | NO   | PRI | NULL    |       |
+| Announcement_time                 | date          | NO   | PRI | NULL    |       |
+| Sources_of_funds                  | char(100)     | YES  |     | NULL    |       |
+| The_actual_amount_of_fund_raising | double(30,10) | YES  |     | NULL    |       |
+| Issue_expenses                    | double(30,10) | YES  |     | NULL    |       |
+| Amount_of_money_raised            | double(30,10) | YES  |     | NULL    |       |
+| Raise_the_amount_of_non_monetary  | double(30,10) | YES  |     | NULL    |       |
+| Currency_name                     | char(100)     | YES  |     | NULL    |       |
+| Raising_profile                   | text          | YES  |     | NULL    |       |
+| Investment_direction              | varchar(100)  | YES  |     | NULL    |       |
+
+companyrelateddepartment
+| Company_code           | char(100)    | NO   | PRI | NULL    |       |
+| Company_department     | char(100)    | NO   | PRI | NULL    |       |
+| Other_individual_stock | varchar(100) | NO   | PRI | NULL    |       |
+
+companyrelatedindex
+| Company_code | char(100) | NO   | PRI | NULL    |       |
+| Index_name   | char(100) | NO   | PRI | NULL    |       |
+| Index_code   | char(100) | NO   | PRI | NULL    |       |
+| Entry_date   | date      | NO   | PRI | NULL    |       |
+| Exit_date    | date      | YES  |     | NULL    |       |
+
+companyrelatedsecurities
+| Company_code | char(100) | NO   | PRI | NULL    |       |
+| Species_name | char(100) | NO   | PRI | NULL    |       |
+| Variety_code | char(100) | NO   | PRI | NULL    |       |
+
+detailshareholders
+| Company_code                                    | char(10)      | NO   | PRI | NULL    |       |
+| Reporting_period                                | date          | NO   | PRI | NULL    |       |
+| The_total_number_of_shareholders                | double(30,10) | YES  |     | NULL    |       |
+| The_change_of_TNOS_over_previous                | double(30,10) | YES  |     | NULL    |       |
+| A_share_of_households                           | double(30,10) | YES  |     | NULL    |       |
+| The_change_of_ASOHH_over_previous               | double(30,10) | YES  |     | NULL    |       |
+| Total_equity_divide_TNOS                        | double(30,10) | YES  |     | NULL    |       |
+| A_shares_DIVIDE_ASOHH                           | double(30,10) | YES  |     | NULL    |       |
+| The_total_percentage_of_top10_shareholders      | double(30,10) | YES  |     | NULL    |       |
+| The_total_percentage_of_top10_tradeShareholders | double(30,10) | YES  |     | NULL    |       |
+
+earningprediction
+| Company_code           | char(100)     | NO   | PRI | NULL    |       |
+| date                   | date          | NO   | PRI | NULL    |       |
+| institution            | char(100)     | NO   | PRI | NULL    |       |
+| Researcher             | varchar(100)  | NO   | PRI | NULL    |       |
+| Actual_value           | double(30,10) | YES  |     | NULL    |       |
+| Forecast_for_the_year1 | double(30,10) | YES  |     | NULL    |       |
+| Forecast_for_the_year2 | double(30,10) | YES  |     | NULL    |       |
+| Forecast_for_the_year3 | double(30,10) | YES  |     | NULL    |       |
+| Forecast_for_the_year4 | double(30,10) | YES  |     | NULL    |       |
+| Forecast_for_the_year5 | double(30,10) | YES  |     | NULL    |       |
+| Grade                  | char(100)     | YES  |     | NULL    |       |
+
+earningtrend
+| Company_code                               | char(100)     | NO   | PRI | NULL    |       |
+| Reporting_period                           | date          | NO   | PRI | NULL    |       |
+| SingleQuarter_EPS                          | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_gross_margin                 | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_sales_margin                 | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_ROE                          | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_ROA                          | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_total_operating_income       | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_total_operating_cost         | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_operating_income             | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_operating_cost               | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_operating_profit             | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_total_profit                 | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_net_profit                   | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_netProfit_belongtoParent     | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_cashflow_fromOPActivity      | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_cashflow_fromInvestActivity  | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_cashflow_fromFinanceActivity | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_netIncrease_InCash           | double(30,10) | YES  |     | NULL    |       |
+
+executives
+| Company_code        | char(100)     | NO   | PRI | NULL    |       |
+| Name                | char(100)     | NO   | PRI | NULL    |       |
+| Post                | char(100)     | NO   | PRI | NULL    |       |
+| Date_of_birth       | char(100)     | YES  |     | NULL    |       |
+| Gender              | char(100)     | YES  |     | NULL    |       |
+| Degree              | char(100)     | YES  |     | NULL    |       |
+| Date_of_appointment | date          | YES  |     | NULL    |       |
+| Date_of_separation  | date          | YES  |     | NULL    |       |
+| resume              | text          | YES  |     | NULL    |       |
+| Job_title           | char(100)     | YES  |     | NULL    |       |
+| Year_salary         | double(30,10) | YES  |     | NULL    |       |
+
+financeguideline
+| Company_code                                           | char(100)     | NO   | PRI | NULL    |       |
+| Report_date                                            | date          | NO   | PRI | NULL    |       |
+| Per_share_index                                        | double(30,10) | YES  |     | NULL    |       |
+| Diluted_earnings_per_share                             | double(30,10) | YES  |     | NULL    |       |
+| Weighted_earnings_per_share                            | double(30,10) | YES  |     | NULL    |       |
+| Earnings_per_share_adjusted                            | double(30,10) | YES  |     | NULL    |       |
+| EarningPerShareAfterDeductNonRecurringGainsAndLosse    | double(30,10) | YES  |     | NULL    |       |
+| Net_assets_per_share_unadjusted                        | double(30,10) | YES  |     | NULL    |       |
+| Net_assets_per_share_adjusted                          | double(30,10) | YES  |     | NULL    |       |
+| Operating_cash_flow_per_share                          | double(30,10) | YES  |     | NULL    |       |
+| Capital_accumulation_fund_per_share                    | double(30,10) | YES  |     | NULL    |       |
+| No_profit_per_share                                    | double(30,10) | YES  |     | NULL    |       |
+| Profitability                                          | double(30,10) | YES  |     | NULL    |       |
+| Profit_margin_of_total_assets                          | double(30,10) | YES  |     | NULL    |       |
+| Main_business_profit_margin                            | double(30,10) | YES  |     | NULL    |       |
+| Net_profit_margin_of_total_assets                      | double(30,10) | YES  |     | NULL    |       |
+| Cost_profit_margin                                     | double(30,10) | YES  |     | NULL    |       |
+| Operating_profit_margin                                | double(30,10) | YES  |     | NULL    |       |
+| Main_business_cost_rate                                | double(30,10) | YES  |     | NULL    |       |
+| Net_sales_rate                                         | double(30,10) | YES  |     | NULL    |       |
+| Equity_rate_of_return                                  | double(30,10) | YES  |     | NULL    |       |
+| Rate_of_return_on_net_assets                           | double(30,10) | YES  |     | NULL    |       |
+| Rate_of_return_on_assets                               | double(30,10) | YES  |     | NULL    |       |
+| Sales_gross_margin                                     | double(30,10) | YES  |     | NULL    |       |
+| Three_cost_proportion                                  | double(30,10) | YES  |     | NULL    |       |
+| Non_main_proportion                                    | double(30,10) | YES  |     | NULL    |       |
+| Main_profit_share                                      | double(30,10) | YES  |     | NULL    |       |
+| dividend_payout_ratio                                  | double(30,10) | YES  |     | NULL    |       |
+| Rate_of_return_on_investment                           | double(30,10) | YES  |     | NULL    |       |
+| Main_business_profit                                   | double(30,10) | YES  |     | NULL    |       |
+| Return_on_net_assets                                   | double(30,10) | YES  |     | NULL    |       |
+| Weighted_return_on_net_assets                          | double(30,10) | YES  |     | NULL    |       |
+| NetProfitAfterDeductingNonRecurringGainsAndLosses      | double(30,10) | YES  |     | NULL    |       |
+| Growth_ability                                         | double(30,10) | YES  |     | NULL    |       |
+| Main_business_revenue_growth_rate                      | double(30,10) | YES  |     | NULL    |       |
+| Net_profit_growth_rate                                 | double(30,10) | YES  |     | NULL    |       |
+| Growth_rate_of_net_assets                              | double(30,10) | YES  |     | NULL    |       |
+| Total_asset_growth_rate                                | double(30,10) | YES  |     | NULL    |       |
+| Operational_capability                                 | double(30,10) | YES  |     | NULL    |       |
+| Accounts_receivable_turnover_rate                      | double(30,10) | YES  |     | NULL    |       |
+| Days_sales_outstanding                                 | double(30,10) | YES  |     | NULL    |       |
+| Inventory_turnover_days                                | double(30,10) | YES  |     | NULL    |       |
+| Inventory_turnover_rate                                | double(30,10) | YES  |     | NULL    |       |
+| Fixed_asset_turnover                                   | double(30,10) | YES  |     | NULL    |       |
+| Turnover_ratio_of_total_assets                         | double(30,10) | YES  |     | NULL    |       |
+| Total_assets_turnover_days                             | double(30,10) | YES  |     | NULL    |       |
+| Turnover_rate_of_current_assets                        | double(30,10) | YES  |     | NULL    |       |
+| Turnover_days_of_current_assets                        | double(30,10) | YES  |     | NULL    |       |
+| Equity_turnover_rate                                   | double(30,10) | YES  |     | NULL    |       |
+| Debt_service_and_capital_structure                     | double(30,10) | YES  |     | NULL    |       |
+| Flow_rate                                              | double(30,10) | YES  |     | NULL    |       |
+| Quick_ratio                                            | double(30,10) | YES  |     | NULL    |       |
+| Cash_ratio                                             | double(30,10) | YES  |     | NULL    |       |
+| interest_coverage_ratio                                | double(30,10) | YES  |     | NULL    |       |
+| Long_term_debt_to_working_capital_ratio                | double(30,10) | YES  |     | NULL    |       |
+| Shareholder_equity_ratio                               | double(30,10) | YES  |     | NULL    |       |
+| Long_term_debt_ratio                                   | double(30,10) | YES  |     | NULL    |       |
+| Shareholders_equity_and_fixed_assets_ratio             | double(30,10) | YES  |     | NULL    |       |
+| Debt_to_equity_ratio                                   | double(30,10) | YES  |     | NULL    |       |
+| Long_term_assets_and_long_term_capital_ratio           | double(30,10) | YES  |     | NULL    |       |
+| Capitalization_ratio                                   | double(30,10) | YES  |     | NULL    |       |
+| Fixed_assets_net_worth_ratio                           | double(30,10) | YES  |     | NULL    |       |
+| Capital_fixed_ratio                                    | double(30,10) | YES  |     | NULL    |       |
+| Property_ratio                                         | double(30,10) | YES  |     | NULL    |       |
+| Liquidation_value_ratio                                | double(30,10) | YES  |     | NULL    |       |
+| Proportion_of_fixed_assets                             | double(30,10) | YES  |     | NULL    |       |
+| Asset_liability_ratio                                  | double(30,10) | YES  |     | NULL    |       |
+| total_assets                                           | double(30,10) | YES  |     | NULL    |       |
+| cash_flow                                              | double(30,10) | YES  |     | NULL    |       |
+| Operating_cash_net_flow_to_sales_revenue_ratio         | double(30,10) | YES  |     | NULL    |       |
+| Operating_cash_flow_rate_of_return_on_assets           | double(30,10) | YES  |     | NULL    |       |
+| Ratio_of_operating_cash_flow_to_net_profit             | double(30,10) | YES  |     | NULL    |       |
+| Net_operating_cash_flow_to_debt_ratio                  | double(30,10) | YES  |     | NULL    |       |
+| Cash_flow_ratio                                        | double(30,10) | YES  |     | NULL    |       |
+| other_indexes                                          | double(30,10) | YES  |     | NULL    |       |
+| Short_term_stock_investment                            | double(30,10) | YES  |     | NULL    |       |
+| Short_term_bond_investment                             | double(30,10) | YES  |     | NULL    |       |
+| Short_term_investment_in_other_operations              | double(30,10) | YES  |     | NULL    |       |
+| Long_term_stock_investment                             | double(30,10) | YES  |     | NULL    |       |
+| Long_term_bond_investment                              | double(30,10) | YES  |     | NULL    |       |
+| Long_term_other_business_investment                    | double(30,10) | YES  |     | NULL    |       |
+| Within_1_years_of_accounts_receivable                  | double(30,10) | YES  |     | NULL    |       |
+| 1_2_years_of_account_receivable                        | double(30,10) | YES  |     | NULL    |       |
+| 2_3_years_of_account_receivable                        | double(30,10) | YES  |     | NULL    |       |
+| Within_3_years_of_accounts_receivable                  | double(30,10) | YES  |     | NULL    |       |
+| Payment_in_advance_within_1_years                      | double(30,10) | YES  |     | NULL    |       |
+| Payment_in_advance_within_1_2_years                    | double(30,10) | YES  |     | NULL    |       |
+| Payment_in_advance_within_2_3_years                    | double(30,10) | YES  |     | NULL    |       |
+| Payment_in_advance_within__3_years                     | double(30,10) | YES  |     | NULL    |       |
+| Other_receivables_within_1_years                       | double(30,10) | YES  |     | NULL    |       |
+| 1_2_years_of_other_receivables                         | double(30,10) | YES  |     | NULL    |       |
+| 2_3_years_of_other_receivables                         | double(30,10) | YES  |     | NULL    |       |
+| Other_receivables_within_3_years                       | double(30,10) | YES  |     | NULL    |       |
+| Basic_earnings_per_share                               | double(30,10) | YES  |     | NULL    |       |
+| Net_profit                                             | double(30,10) | YES  |     | NULL    |       |
+| Total_operating_income                                 | double(30,10) | YES  |     | NULL    |       |
+| Total_operating_income_growth_rate                     | double(30,10) | YES  |     | NULL    |       |
+| Net_asset_value_per_share                              | double(30,10) | YES  |     | NULL    |       |
+| Return_on_net_assets_diluted                           | double(30,10) | YES  |     | NULL    |       |
+| Financial_year                                         | date          | YES  |     | NULL    |       |
+| Earnings_per_share_diluted                             | double(30,10) | YES  |     | NULL    |       |
+| Earnings_per_share_weighted                            | double(30,10) | YES  |     | NULL    |       |
+| Earnings_per_share_diluted_removed                     | double(30,10) | YES  |     | NULL    |       |
+| Earnings_per_share_weighted_removed                    | double(30,10) | YES  |     | NULL    |       |
+| BasicEarningsPerShareAfterDeductNonRecurrGainLosse     | double(30,10) | YES  |     | NULL    |       |
+| Return_on_net_assets_weighted                          | double(30,10) | YES  |     | NULL    |       |
+| Return_on_net_assets_diluted_removed                   | double(30,10) | YES  |     | NULL    |       |
+| Return_on_net_assets_weighted_removed                  | double(30,10) | YES  |     | NULL    |       |
+| Net_cash_flows_from_operating_activities_per_share     | double(30,10) | YES  |     | NULL    |       |
+| Earnings_before_interest_and_tax                       | double(30,10) | YES  |     | NULL    |       |
+| EBIT_interest_coverage_ratio                           | double(30,10) | YES  |     | NULL    |       |
+| EBITDA                                                 | double(30,10) | YES  |     | NULL    |       |
+| EBITDA_interest_coverage_ratio                         | double(30,10) | YES  |     | NULL    |       |
+| DilutedEarningPerShareAfterDeductNonRecurringGainLosse | double(30,10) | YES  |     | NULL    |       |
+| RateOfReturnOnNetAssetsMainBusinessProfitsDiluted      | double(30,10) | YES  |     | NULL    |       |
+| RateOfReturnOnNetAssetsMainBusinessProfitsWeighted     | double(30,10) | YES  |     | NULL    |       |
+| Earnings_per_share_main_business_profits_diluted       | double(30,10) | YES  |     | NULL    |       |
+| Earnings_per_share_main_business_profits_weighted      | double(30,10) | YES  |     | NULL    |       |
+| Rate_of_return_on_net_assets_operating_profit_diluted  | double(30,10) | YES  |     | NULL    |       |
+| Rate_of_return_on_net_assets_operating_profit_weighted | double(30,10) | YES  |     | NULL    |       |
+| operating_profit_diluted_earnings_per_share            | double(30,10) | YES  |     | NULL    |       |
+| operating_profit_weighted_earnings_per_share           | double(30,10) | YES  |     | NULL    |       |
+| Report_end_date                                        | date          | YES  |     | NULL    |       |
+| NetAssetsPerShareAdjusted                              | double(30,10) | YES  |     | NULL    |       |
+| DilutedEarningsPerShare                                | double(30,10) | YES  |     | NULL    |       |
+| NetProfitAfterDeductingNonRecurrGainsAndLosses         | double(30,10) | YES  |     | NULL    |       |
+| OperatingCashFlowPerShare                              | double(30,10) | YES  |     | NULL    |       |
+| NetProfitGrowthRate                                    | double(30,10) | YES  |     | NULL    |       |
+| AssetLiabilityRatio                                    | double(30,10) | YES  |     | NULL    |       |
+| InventoryTurnoverRate                                  | double(30,10) | YES  |     | NULL    |       |
+| ReturnOnNetAssetsDiluted                               | double(30,10) | YES  |     | NULL    |       |
+| Fiscal_year                                            | varchar(100)  | YES  |     | NULL    |       |
+
+financesummary
+| Company_code                | char(100)     | NO   | PRI | NULL    |       |
+| date                        | date          | NO   | PRI | NULL    |       |
+| Net_asset_value_per_share   | double(30,10) | YES  |     | NULL    |       |
+| Earnings_per_share          | double(30,10) | YES  |     | NULL    |       |
+| Cash_per_share              | double(30,10) | YES  |     | NULL    |       |
+| Capital_reserve_per_share   | double(30,10) | YES  |     | NULL    |       |
+| Total_fixed_assets          | double(30,10) | YES  |     | NULL    |       |
+| Total_current_assets        | double(30,10) | YES  |     | NULL    |       |
+| Total_Assets                | double(30,10) | YES  |     | NULL    |       |
+| Total_long_term_liabilities | double(30,10) | YES  |     | NULL    |       |
+| Main_business_income        | double(30,10) | YES  |     | NULL    |       |
+| Financial_expenses          | double(30,10) | YES  |     | NULL    |       |
+| Net_profit                  | double(30,10) | YES  |     | NULL    |       |
+
+footnote
+| Company_code  | char(100) | NO   | PRI | NULL    |       |
+| Report_period | date      | NO   | PRI | NULL    |       |
+| content       | text      | YES  |     | NULL    |       |
+
+fundstockholder
+| Company_code                  | char(100)     | NO   | PRI | NULL    |       |
+| deadline                      | date          | NO   | PRI | NULL    |       |
+| Fund_name                     | varchar(100)  | NO   | PRI | NULL    |       |
+| Fund_code                     | char(100)     | YES  |     | NULL    |       |
+| Position_number               | double(30,10) | YES  |     | NULL    |       |
+| Proportion_of_tradable_shares | double(30,10) | YES  |     | NULL    |       |
+| Stock_market_value            | double(30,10) | YES  |     | NULL    |       |
+| Proportion_of_net_worth       | double(30,10) | YES  |     | NULL    |       |
+
+incomecomposition
+| Company_code               | char(100)     | NO   | PRI | NULL    |       |
+| Announcement_date          | date          | NO   | PRI | NULL    |       |
+| Main_business_project      | char(100)     | NO   | PRI | NULL    |       |
+| Main_business_income       | double(30,10) | YES  |     | NULL    |       |
+| Main_business_income_ratio | double(30,10) | YES  |     | NULL    |       |
+| Main_business_cost         | double(30,10) | YES  |     | NULL    |       |
+| Main_business_cost_ratio   | double(30,10) | YES  |     | NULL    |       |
+| Main_business_profit       | double(30,10) | YES  |     | NULL    |       |
+| Main_business_profit_ratio | double(30,10) | YES  |     | NULL    |       |
+
+incometrend
+| Company_code                               | char(100)     | NO   | PRI | NULL    |       |
+| Reporting_period                           | date          | NO   | PRI | NULL    |       |
+| SingleQuarter_EPS                          | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_gross_margin                 | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_sales_margin                 | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_ROE                          | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_ROA                          | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_total_operating_income       | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_total_operating_cost         | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_operating_income             | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_operating_cost               | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_operating_profit             | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_total_profit                 | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_net_profit                   | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_netProfit_belongtoParent     | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_cashflow_fromOPActivity      | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_cashflow_fromInvestActivity  | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_cashflow_fromFinanceActivity | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_netIncrease_InCash           | double(30,10) | YES  |     | NULL    |       |
+
+inventorydetail
+| Company_code              | char(100)     | NO   | PRI | NULL    |       |
+| Announcement_date         | date          | NO   | PRI | NULL    |       |
+| Inventory_items           | char(100)     | NO   | PRI | NULL    |       |
+| The_amount_of_inventories | double(30,10) | YES  |     | NULL    |       |
+| Devaluation               | double(30,10) | YES  |     | NULL    |       |
+| unit                      | char(10)      | YES  |     | NULL    |       |
+
+investmentrating
+| Company_code          | char(100)    | NO   | PRI | NULL    |       |
+| Rating_date           | date         | NO   | PRI | NULL    |       |
+| Research_institutions | varchar(100) | NO   | PRI | NULL    |       |
+| researcher            | varchar(100) | NO   | PRI | NULL    |       |
+| Latest_rating         | char(100)    | YES  |     | NULL    |       |
+
+mainactivity
+| Field                               | Type          | Null | Key | Default | Extra |
+| Company_code                        | char(100)     | NO   | PRI | NULL    |       |
+| date                                | date          | NO   | PRI | NULL    |       |
+| Roe                                 | double(30,10) | YES  |     | NULL    |       |
+| Total_assets_net_interest_rate      | double(30,10) | YES  |     | NULL    |       |
+| Operating_net_profit_margin         | double(30,10) | YES  |     | NULL    |       |
+| Net_profit                          | double(30,10) | YES  |     | NULL    |       |
+| Gross_income                        | double(30,10) | YES  |     | NULL    |       |
+| Business_income                     | double(30,10) | YES  |     | NULL    |       |
+| Changes_in_fair_value_gains         | double(30,10) | YES  |     | NULL    |       |
+| Non_operating_income                | double(30,10) | YES  |     | NULL    |       |
+| Investment_income                   | double(30,10) | YES  |     | NULL    |       |
+| The_total_cost                      | double(30,10) | YES  |     | NULL    |       |
+| Operating_cost                      | double(30,10) | YES  |     | NULL    |       |
+| Business_taxes_and_additional       | double(30,10) | YES  |     | NULL    |       |
+| Income_tax_expense                  | double(30,10) | YES  |     | NULL    |       |
+| Assets_impairment_loss              | double(30,10) | YES  |     | NULL    |       |
+| Non_operating_expense               | double(30,10) | YES  |     | NULL    |       |
+| Expenses_for_the_period             | double(30,10) | YES  |     | NULL    |       |
+| Financial_expenses                  | double(30,10) | YES  |     | NULL    |       |
+| Sales_expense                       | double(30,10) | YES  |     | NULL    |       |
+| Management_costs                    | double(30,10) | YES  |     | NULL    |       |
+| Total_asset_turnover                | double(30,10) | YES  |     | NULL    |       |
+| Total_assets                        | double(30,10) | YES  |     | NULL    |       |
+| Current_assets                      | double(30,10) | YES  |     | NULL    |       |
+| Money_funds                         | double(30,10) | YES  |     | NULL    |       |
+| Trading_financial_assets            | double(30,10) | YES  |     | NULL    |       |
+| Accounts_receivable                 | double(30,10) | YES  |     | NULL    |       |
+| Advance_payment                     | double(30,10) | YES  |     | NULL    |       |
+| Receivable_other                    | double(30,10) | YES  |     | NULL    |       |
+| Stock                               | double(30,10) | YES  |     | NULL    |       |
+| Other_current_assets                | double(30,10) | YES  |     | NULL    |       |
+| Non_current_assets                  | double(30,10) | YES  |     | NULL    |       |
+| Financial_assets_available_for_sale | double(30,10) | YES  |     | NULL    |       |
+| Held_to_maturity_investments        | double(30,10) | YES  |     | NULL    |       |
+| Long_term_equity_investment         | double(30,10) | YES  |     | NULL    |       |
+| Investment_real_estate              | double(30,10) | YES  |     | NULL    |       |
+| Fixed_assets                        | double(30,10) | YES  |     | NULL    |       |
+| Construction_in_progress            | double(30,10) | YES  |     | NULL    |       |
+| Intangible_assets                   | double(30,10) | YES  |     | NULL    |       |
+| Development_expenditure             | double(30,10) | YES  |     | NULL    |       |
+| Goodwill                            | double(30,10) | YES  |     | NULL    |       |
+| Long_term_prepaid_expenses          | double(30,10) | YES  |     | NULL    |       |
+| Deferred_tax_assets                 | double(30,10) | YES  |     | NULL    |       |
+| Other_non_current_assets            | double(30,10) | YES  |     | NULL    |       |
+| Equity_multiplier                   | double(30,10) | YES  |     | NULL    |       |
+| Assets_and_liabilities              | double(30,10) | YES  |     | NULL    |       |
+| Total_liabilities                   | double(30,10) | YES  |     | NULL    |       |
+
+marketbulletin
+| Company_code        | char(100)    | NO   | PRI | NULL    |       |
+| Listed_report_title | varchar(100) | YES  |     | NULL    |       |
+| Report_links        | varchar(200) | NO   | PRI | NULL    |       |
+
+newstock
+| Company_code                                          | char(100)     | NO   | PRI | NULL    |       |
+| Stock_code                                            | char(100)     | YES  |     | NULL    |       |
+| Securities_abbreviation                               | char(100)     | YES  |     | NULL    |       |
+| denomination                                          | double(30,10) | YES  |     | NULL    |       |
+| Issue_price                                           | double(30,10) | YES  |     | NULL    |       |
+| Currency_name                                         | char(100)     | YES  |     | NULL    |       |
+| Total_funds_raised                                    | double(30,10) | YES  |     | NULL    |       |
+| Issue_expenses                                        | double(30,10) | YES  |     | NULL    |       |
+| Forecast_net_profit                                   | double(30,10) | YES  |     | NULL    |       |
+| Profit_forecast_year                                  | date          | YES  |     | NULL    |       |
+| Purchase_limit_individual                             | double(30,10) | YES  |     | NULL    |       |
+| Purchase_limit_institution                            | double(30,10) | YES  |     | NULL    |       |
+| Internet_issue_number                                 | double(30,10) | YES  |     | NULL    |       |
+| The_secondary_market_issue_number                     | double(30,10) | YES  |     | NULL    |       |
+| The_number_of_funds_to_the_fund                       | double(30,10) | YES  |     | NULL    |       |
+| Other_issue_quantity                                  | double(30,10) | YES  |     | NULL    |       |
+| Release_mode                                          | char(100)     | YES  |     | NULL    |       |
+| Underwrite_manner                                     | char(100)     | YES  |     | NULL    |       |
+| Underwriter_balance_amount                            | double(30,10) | YES  |     | NULL    |       |
+| Online_release_date                                   | date          | YES  |     | NULL    |       |
+| The_online_issuance_of_effective_subscription_number  | double(30,10) | YES  |     | NULL    |       |
+| Online_issue_of_the_number_of_valid_purchase          | double(30,10) | YES  |     | NULL    |       |
+| Internet_lottery_rate                                 | double(30,10) | YES  |     | NULL    |       |
+| Listed_date                                           | date          | YES  |     | NULL    |       |
+| Secondary_market_placement_date                       | date          | YES  |     | NULL    |       |
+| PlacingEffectivePurchaseInSecondaryMarketHouseholds   | double(30,10) | YES  |     | NULL    |       |
+| Placing_effective_secondary_market_purchase_of_shares | double(30,10) | YES  |     | NULL    |       |
+| Placing_the_secondary_market_issuance_success_rate    | double(30,10) | YES  |     | NULL    |       |
+| Secondary_market_placement_date_of_payment            | date          | YES  |     | NULL    |       |
+| Strategic_investors_with_shares_listed_date           | date          | YES  |     | NULL    |       |
+| Issue_announcement_date                               | date          | YES  |     | NULL    |       |
+| Issue_results_announcement_date                       | date          | YES  |     | NULL    |       |
+| IPO_announcement                                      | date          | YES  |     | NULL    |       |
+| Public_announcement_date                              | date          | NO   | PRI | NULL    |       |
+| Whether_additional                                    | char(100)     | YES  |     | NULL    |       |
+| Whether_to_reduce_the_state_owned_shares              | char(100)     | YES  |     | NULL    |       |
+| Main_underwriter                                      | varchar(100)  | YES  |     | NULL    |       |
+| Distributor_Name                                      | varchar(100)  | YES  |     | NULL    |       |
+| International_Coordinator                             | varchar(100)  | YES  |     | NULL    |       |
+| Listing_recommendation                                | varchar(100)  | YES  |     | NULL    |       |
+| Announcement_date                                     | date          | YES  |     | NULL    |       |
+| Lower_price_range                                     | double(30,10) | YES  |     | NULL    |       |
+| Preliminary_inquiry_price_range_ceiling               | double(30,10) | YES  |     | NULL    |       |
+| Issue_number                                          | double(30,10) | YES  |     | NULL    |       |
+| Earnings_ratio_diluted                                | double(30,10) | YES  |     | NULL    |       |
+| Earnings_ratio_weighted                               | double(30,10) | YES  |     | NULL    |       |
+| The_total_funds_raised                                | double(30,10) | YES  |     | NULL    |       |
+| The_actual_net_proceeds                               | double(30,10) | YES  |     | NULL    |       |
+| Placing_the_number_to_the_general_legal               | double(30,10) | YES  |     | NULL    |       |
+| Number_rationed_to_strategic_investors                | double(30,10) | YES  |     | NULL    |       |
+| Other_issue_number                                    | double(30,10) | YES  |     | NULL    |       |
+| Issue_expenses_yuan                                   | double(30,10) | YES  |     | NULL    |       |
+| Issue_price_yuan                                      | double(30,10) | YES  |     | NULL    |       |
+| The_number_of_funds_to_the_fund_gu                    | double(30,10) | YES  |     | NULL    |       |
+| denomination_yuan                                     | double(30,10) | YES  |     | NULL    |       |
+| Issue_number_gu                                       | double(30,10) | YES  |     | NULL    |       |
+
+paytax
+| Company_code                                | char(100)     | NO   | PRI | NULL    |       |
+| Announcement_date                           | date          | NO   | PRI | NULL    |       |
+| Report_type                                 | char(100)     | YES  |     | NULL    |       |
+| Report_period                               | date          | YES  |     | NULL    |       |
+| VAT                                         | double(30,10) | YES  |     | NULL    |       |
+| No_deductible_beginning_number              | double(30,10) | YES  |     | NULL    |       |
+| Substituted_money_on_VAT                    | double(30,10) | YES  |     | NULL    |       |
+| Export_drawback                             | double(30,10) | YES  |     | NULL    |       |
+| The_input_tax_turn                          | double(30,10) | YES  |     | NULL    |       |
+| Transfer_out_overpaid_VAT                   | double(30,10) | YES  |     | NULL    |       |
+| Amount_of_taxes_on_purchases                | double(30,10) | YES  |     | NULL    |       |
+| Taxes_paid                                  | double(30,10) | YES  |     | NULL    |       |
+| Tax_relief                                  | double(30,10) | YES  |     | NULL    |       |
+| Domestic_products_of_export_credits_payable | double(30,10) | YES  |     | NULL    |       |
+| Turn_out_not_to_pay_VAT                     | double(30,10) | YES  |     | NULL    |       |
+| Ending_number_is_not_deductible             | double(30,10) | YES  |     | NULL    |       |
+| VAT_unpaid                                  | double(30,10) | YES  |     | NULL    |       |
+| Number_of_unpaid_early                      | double(30,10) | YES  |     | NULL    |       |
+| The_current_number_of_transferred           | double(30,10) | YES  |     | NULL    |       |
+| This_issue_has_been_handed_over             | double(30,10) | YES  |     | NULL    |       |
+| Final_number                                | double(30,10) | YES  |     | NULL    |       |
+
+plate
+| Company_code     | char(100)    | NO   | PRI | NULL    |       |
+| plate            | char(100)    | NO   | PRI | NULL    |       |
+| Individual_stock | varchar(100) | NO   | PRI | NULL    |       |
+
+profitreport
+| Report_date    | date      | NO   | PRI | NULL    |       |
+| Company_code   | char(100) | NO   | PRI | NULL    |       |
+| Report_content | text      | YES  |     | NULL    |       |
+
+profittable
+| Report_date                                             | date          | NO   | PRI | NULL    |       |
+| unit                                                    | char(100)     | YES  |     | NULL    |       |
+| Net_interest_income                                     | double(30,10) | YES  |     | NULL    |       |
+| Interest_income                                         | double(30,10) | YES  |     | NULL    |       |
+| Interest_expense                                        | double(30,10) | YES  |     | NULL    |       |
+| Net_fee_and_commission_income                           | double(30,10) | YES  |     | NULL    |       |
+| Fee_and_commission_income                               | double(30,10) | YES  |     | NULL    |       |
+| Fee_and_commission_expenses                             | double(30,10) | YES  |     | NULL    |       |
+| Net_business_income                                     | double(30,10) | YES  |     | NULL    |       |
+| Intermediate_business_income                            | double(30,10) | YES  |     | NULL    |       |
+| Intermediate_business_expenses                          | double(30,10) | YES  |     | NULL    |       |
+| Net_trading_income                                      | double(30,10) | YES  |     | NULL    |       |
+| Net_income_from_derivative_financial_instruments        | double(30,10) | YES  |     | NULL    |       |
+| Exchange_gains                                          | double(30,10) | YES  |     | NULL    |       |
+| Net_investment_income                                   | double(30,10) | YES  |     | NULL    |       |
+| Investment_income_of_the_couplet_company                | double(30,10) | YES  |     | NULL    |       |
+| Changes_in_fair_value_gains_losses                      | double(30,10) | YES  |     | NULL    |       |
+| Other_business_income                                   | double(30,10) | YES  |     | NULL    |       |
+| Operating_expenses                                      | double(30,10) | YES  |     | NULL    |       |
+| Business_and_management_expenses                        | double(30,10) | YES  |     | NULL    |       |
+| Depreciation_charge                                     | double(30,10) | YES  |     | NULL    |       |
+| For_bad_debts                                           | double(30,10) | YES  |     | NULL    |       |
+| Other_business_expenses                                 | double(30,10) | YES  |     | NULL    |       |
+| Business_profit                                         | double(30,10) | YES  |     | NULL    |       |
+| Out_of_business_expenses                                | double(30,10) | YES  |     | NULL    |       |
+| Gross_profit                                            | double(30,10) | YES  |     | NULL    |       |
+| Minority_equity                                         | double(30,10) | YES  |     | NULL    |       |
+| Net_profit_attributable_to_the_parent_company           | double(30,10) | YES  |     | NULL    |       |
+| Profit_not_allocated_at_the_beginning_of_year           | double(30,10) | YES  |     | NULL    |       |
+| Profit_for_distribution                                 | double(30,10) | YES  |     | NULL    |       |
+| Statutory_surplus_reserve                               | double(30,10) | YES  |     | NULL    |       |
+| Statutory_public_welfare_fund                           | double(30,10) | YES  |     | NULL    |       |
+| Extract_general_risk_preparation                        | double(30,10) | YES  |     | NULL    |       |
+| Extracting_trust_compensation_reserve                   | double(30,10) | YES  |     | NULL    |       |
+| Profit_for_shareholders                                 | double(30,10) | YES  |     | NULL    |       |
+| Preferred_stock_dividends_payable                       | double(30,10) | YES  |     | NULL    |       |
+| Discretionary_surplus_reserve                           | double(30,10) | YES  |     | NULL    |       |
+| Common_stock_dividends_payable                          | double(30,10) | YES  |     | NULL    |       |
+| Common_stock_dividends_transferred_to_share_capital     | double(30,10) | YES  |     | NULL    |       |
+| No_assigned_profit                                      | double(30,10) | YES  |     | NULL    |       |
+| Basic_earnings_per_share                                | double(30,10) | YES  |     | NULL    |       |
+| Diluted_earnings_per_share                              | double(30,10) | YES  |     | NULL    |       |
+| Stock_code                                              | char(100)     | YES  |     | NULL    |       |
+| Reporting_period                                        | date          | YES  |     | NULL    |       |
+| Year                                                    | date          | YES  |     | NULL    |       |
+| Business_income                                         | double(30,10) | YES  |     | NULL    |       |
+| Business_cost                                           | double(30,10) | YES  |     | NULL    |       |
+| Business_taxes_and_additional                           | double(30,10) | YES  |     | NULL    |       |
+| Selling_expenses                                        | double(30,10) | YES  |     | NULL    |       |
+| Management_expenses                                     | double(30,10) | YES  |     | NULL    |       |
+| Exploration_cost                                        | double(30,10) | YES  |     | NULL    |       |
+| Financial_expenses                                      | double(30,10) | YES  |     | NULL    |       |
+| Assets_impairment_loss                                  | double(30,10) | YES  |     | NULL    |       |
+| Net_return_on_changes_in_fair_value                     | double(30,10) | YES  |     | NULL    |       |
+| Income_from_investment                                  | double(30,10) | YES  |     | NULL    |       |
+| InvestmentInterestsInJointVenturesAndJointVentures      | double(30,10) | YES  |     | NULL    |       |
+| Other_subjects_affecting_operating_profit               | double(30,10) | YES  |     | NULL    |       |
+| Subsidy_income                                          | double(30,10) | YES  |     | NULL    |       |
+| Nonoperating_income                                     | double(30,10) | YES  |     | NULL    |       |
+| Less_Nonoperating_income                                | double(30,10) | YES  |     | NULL    |       |
+| Net_loss_on_disposal_of_non_current_assets              | double(30,10) | YES  |     | NULL    |       |
+| Plus_Other_subjects_affecting_total_profits             | double(30,10) | YES  |     | NULL    |       |
+| Less_income_tax                                         | double(30,10) | YES  |     | NULL    |       |
+| Plus_Other_subjects_that_affect_net_profit              | double(30,10) | YES  |     | NULL    |       |
+| Net_profit                                              | double(30,10) | YES  |     | NULL    |       |
+| Net_profit_attributable_to_owners_of_the_parent_company | double(30,10) | YES  |     | NULL    |       |
+| Minority_interest                                       | double(30,10) | YES  |     | NULL    |       |
+| Business_profit_third                                   | double(30,10) | YES  |     | NULL    |       |
+| Gross_profit_fourth                                     | double(30,10) | YES  |     | NULL    |       |
+| Company_code                                            | char(100)     | NO   | PRI | NULL    |       |
+| Nonoperating_incomePlus                                 | double(30,10) | YES  |     | NULL    |       |
+
+profittrend
+| Company_code                               | char(100)     | NO   | PRI | NULL    |       |
+| Reporting_period                           | date          | NO   | PRI | NULL    |       |
+| SingleQuarter_EPS                          | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_gross_margin                 | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_sales_margin                 | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_ROE                          | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_ROA                          | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_total_operating_income       | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_total_operating_cost         | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_operating_income             | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_operating_cost               | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_operating_profit             | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_total_profit                 | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_net_profit                   | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_netProfit_belongtoParent     | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_cashflow_fromOPActivity      | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_cashflow_fromInvestActivity  | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_cashflow_fromFinanceActivity | double(30,10) | YES  |     | NULL    |       |
+| SingleQuarter_netIncrease_InCash           | double(30,10) | YES  |     | NULL    |       |
+
+publiccompany
+| Complete_company_name                           | varchar(100)  | YES  |     | NULL    |       |
+| Company_code                                    | char(100)     | NO   | PRI | NULL    |       |
+| A_share_code                                    | char(100)     | YES  |     | NULL    |       |
+| B_share_code                                    | char(100)     | YES  |     | NULL    |       |
+| A_share_abbreviation                            | char(100)     | YES  |     | NULL    |       |
+| B_share_abbreviation                            | char(100)     | YES  |     | NULL    |       |
+| English_name                                    | varchar(100)  | YES  |     | NULL    |       |
+| Company_abbreviation                            | char(100)     | YES  |     | NULL    |       |
+| Address                                         | varchar(100)  | YES  |     | NULL    |       |
+| Transfer_mode                                   | char(100)     | YES  |     | NULL    |       |
+| A_share_listed_date                             | date          | YES  |     | NULL    |       |
+| B_share_listed_date                             | date          | YES  |     | NULL    |       |
+| Registered_address                              | varchar(100)  | YES  |     | NULL    |       |
+| Region                                          | char(100)     | YES  |     | NULL    |       |
+| Province                                        | varchar(100)  | YES  |     | NULL    |       |
+| City                                            | varchar(100)  | YES  |     | NULL    |       |
+| Office_address                                  | varchar(100)  | YES  |     | NULL    |       |
+| Postcode                                        | char(100)     | YES  |     | NULL    |       |
+| Legal_representative                            | varchar(100)  | YES  |     | NULL    |       |
+| Board_Secretary                                 | varchar(100)  | YES  |     | NULL    |       |
+| Telephone                                       | varchar(100)  | YES  |     | NULL    |       |
+| Email                                           | varchar(100)  | YES  |     | NULL    |       |
+| Company_website                                 | varchar(100)  | YES  |     | NULL    |       |
+| A_share_listing_location                        | char(100)     | YES  |     | NULL    |       |
+| B_share_listing_location                        | char(100)     | YES  |     | NULL    |       |
+| Industry                                        | varchar(100)  | YES  |     | NULL    |       |
+| Business_scope                                  | text          | YES  |     | NULL    |       |
+| Articles_of_corporation                         | text          | YES  |     | NULL    |       |
+| Company_logo                                    | varchar(100)  | YES  |     | NULL    |       |
+| Registration_No                                 | char(100)     | YES  |     | NULL    |       |
+| Company_achievement                             | text          | YES  |     | NULL    |       |
+| Name_of_the_largest_shareholder                 | char(100)     | YES  |     | NULL    |       |
+| Number_of_shares_of_the_largest_shareholder     | double(30,10) | YES  |     | NULL    |       |
+| The_proportion_of_the_first_largest_shareholder | double(30,10) | YES  |     | NULL    |       |
+| Company_profile                                 | text          | YES  |     | NULL    |       |
+| Subsidiary_corporation                          | text          | YES  |     | NULL    |       |
+| Corporate_headquarters                          | text          | YES  |     | NULL    |       |
+| Company_name                                    | varchar(100)  | YES  |     | NULL    |       |
+| Listed_market                                   | char(100)     | YES  |     | NULL    |       |
+| Issue_price                                     | double(30,10) | YES  |     | NULL    |       |
+| Main_underwriter                                | varchar(100)  | YES  |     | NULL    |       |
+| Date_of_establishment                           | date          | YES  |     | NULL    |       |
+| Registered_capital                              | double(30,10) | YES  |     | NULL    |       |
+| Institution_type                                | char(100)     | YES  |     | NULL    |       |
+| Organization_form                               | char(100)     | YES  |     | NULL    |       |
+| Company_telephone                               | varchar(100)  | YES  |     | NULL    |       |
+| Board_Secretary_phone                           | varchar(100)  | YES  |     | NULL    |       |
+| Fax                                             | varchar(100)  | YES  |     | NULL    |       |
+| Board_Secretary_fax                             | varchar(100)  | YES  |     | NULL    |       |
+| Board_Secretary_email                           | varchar(100)  | YES  |     | NULL    |       |
+| Information_disclosure_website                  | varchar(100)  | YES  |     | NULL    |       |
+| Securities_referred_to_the_history_of_the_name  | text          | YES  |     | NULL    |       |
+| Name_used_before                                | varchar(100)  | YES  |     | NULL    |       |
+| Business_registration_number                    | varchar(100)  | YES  |     | NULL    |       |
+| Registered_capital_yuan                         | double(30,10) | YES  |     | NULL    |       |
+| Belongs_to_the_SFC_industry                     | char(100)     | YES  |     | NULL    |       |
+| Total_number_of_employees                       | double(30,10) | YES  |     | NULL    |       |
+| General_manager                                 | char(100)     | YES  |     | NULL    |       |
+| Audit_institutions                              | varchar(100)  | YES  |     | NULL    |       |
+| Counsel                                         | varchar(100)  | YES  |     | NULL    |       |
+| Management_analysis                             | text          | YES  |     | NULL    |       |
+| Brief_history                                   | text          | YES  |     | NULL    |       |
+| Listed_date                                     | date          | YES  |     | NULL    |       |
+| Sponsored_brokerage                             | varchar(100)  | YES  |     | NULL    |       |
+| History                                         | text          | YES  |     | NULL    |       |
+| Main_business                                   | text          | YES  |     | NULL    |       |
+| Registered_capital_wan                          | double(30,10) | YES  |     | NULL    |       |
+| Company_history                                 | text          | YES  |     | NULL    |       |
+| TotalNumberOfEmployees                          | double(30,10) | YES  |     | NULL    |       |
+| CompanyEnglishName                              | varchar(100)  | YES  |     | NULL    |       |
+| CompanyAddress                                  | varchar(100)  | YES  |     | NULL    |       |
+| ListedDate                                      | date          | YES  |     | NULL    |       |
+| BelongToIndustry                                | varchar(100)  | YES  |     | NULL    |       |
+| Articles_of_corporation_URL                     | varchar(200)  | YES  |     | NULL    |       |
+| Registered_capital_wanyuan                      | double(30,10) | YES  |     | NULL    |       |
+| LegalRepresentative                             | varchar(100)  | YES  |     | NULL    |       |
+| Post_code                                       | char(100)     | YES  |     | NULL    |       |
+
+raiseexplanation
+| Company_code       | char(100)    | NO   | PRI | NULL    |       |
+| Specification_name | varchar(100) | YES  |     | NULL    |       |
+| Manual_link        | varchar(200) | NO   | PRI | NULL    |       |
+
+restrictedsale
+| Company_code                                | char(100)     | NO   | PRI | NULL    |       |
+| Listed_date                                 | date          | NO   | PRI | NULL    |       |
+| Number_of_listed_shares                     | double(30,10) | YES  |     | NULL    |       |
+| Listed_shares_type                          | char(100)     | YES  |     | NULL    |       |
+| Accounted_for_the_proportion_of_circulation | double(30,10) | YES  |     | NULL    |       |
+| Proportion_of_total_share_capital           | double(30,10) | YES  |     | NULL    |       |
+
+sharebonusfh
+| Company_code                                            | char(100)     | NO   | PRI | NULL    |       |
+| Announcement_date                                       | date          | NO   | PRI | NULL    |       |
+| Bonus_shares                                            | double(30,10) | YES  |     | NULL    |       |
+| Increase_by_transferring                                | double(30,10) | YES  |     | NULL    |       |
+| dividend                                                | double(30,10) | YES  |     | NULL    |       |
+| Speed_of_progress                                       | char(100)     | YES  |     | NULL    |       |
+| Ex_dividend_date                                        | date          | YES  |     | NULL    |       |
+| Equity_registration_date                                | date          | YES  |     | NULL    |       |
+| The_date_of_listing                                     | date          | YES  |     | NULL    |       |
+| Detailed_link                                           | varchar(300)  | YES  |     | NULL    |       |
+| Scheme_schedule                                         | char(100)     | YES  |     | NULL    |       |
+| The_proportion_of_bonus_shares                          | double(30,10) | YES  |     | NULL    |       |
+| Capitalization_ratio                                    | double(30,10) | YES  |     | NULL    |       |
+| Dividend_for_every_ten_shares                           | double(30,10) | YES  |     | NULL    |       |
+| Equity_registration_dateDivideB_shares_last_trading_day | date          | YES  |     | NULL    |       |
+| B_shares_registration_date                              | date          | YES  |     | NULL    |       |
+| Dividend_date                                           | date          | YES  |     | NULL    |       |
+| Benchmark_capital_stock                                 | double(30,10) | YES  |     | NULL    |       |
+| Plan_announcement_date                                  | date          | YES  |     | NULL    |       |
+| AnnouncementDateOfTheGeneralMeetingOfShareholders       | date          | YES  |     | NULL    |       |
+| The_date_of_listing_and_trade                           | date          | YES  |     | NULL    |       |
+
+sharebonuspg
+| Company_code                | char(100)     | NO   | PRI | NULL    |       |
+| Announcement_date           | date          | NO   | PRI | NULL    |       |
+| Allotment_scheme            | double(30,10) | YES  |     | NULL    |       |
+| Allotment_price             | double(30,10) | YES  |     | NULL    |       |
+| Equity_benchmarks           | double(30,10) | YES  |     | NULL    |       |
+| Ex_dividend_date            | date          | YES  |     | NULL    |       |
+| Equity_registration_date    | date          | YES  |     | NULL    |       |
+| Payment_start_date          | date          | YES  |     | NULL    |       |
+| Payment_date_of_termination | date          | YES  |     | NULL    |       |
+| Allotment_day               | date          | YES  |     | NULL    |       |
+| Total_funds_raised          | double(30,10) | YES  |     | NULL    |       |
+| Details_links               | text          | YES  |     | NULL    |       |
+
+stockholder
+| Company_code                 | char(100)     | NO   | PRI | NULL    |       |
+| deadline                     | date          | NO   | PRI | NULL    |       |
+| Announcement_date            | date          | YES  |     | NULL    |       |
+| Shareholders_description     | text          | YES  |     | NULL    |       |
+| Total_number_of_shareholders | double(30,10) | YES  |     | NULL    |       |
+| Average_number_of_shares     | double(30,10) | YES  |     | NULL    |       |
+| Number                       | char(100)     | NO   | PRI | NULL    |       |
+| Name_of_shareholder          | varchar(200)  | YES  |     | NULL    |       |
+| Number_of_shares             | double(30,10) | YES  |     | NULL    |       |
+| Shareholding_ratio           | double(30,10) | YES  |     | NULL    |       |
+| Equity_nature                | char(100)     | YES  |     | NULL    |       |
+
+stockstructure
+| Company_code                         | char(100)     | NO   | PRI | NULL    |       |
+| Whole_capital                        | double(30,10) | YES  |     | NULL    |       |
+| Tradable_shares                      | double(30,10) | YES  |     | NULL    |       |
+| A_share                              | double(30,10) | YES  |     | NULL    |       |
+| B_share                              | double(30,10) | YES  |     | NULL    |       |
+| H_srock_S_stock_N_stock              | double(30,10) | YES  |     | NULL    |       |
+| Others                               | double(30,10) | YES  |     | NULL    |       |
+| Restricted_stock                     | double(30,10) | YES  |     | NULL    |       |
+| Placing_legal_person                 | double(30,10) | YES  |     | NULL    |       |
+| Strategic_investor                   | double(30,10) | YES  |     | NULL    |       |
+| Securities_investment_funds          | double(30,10) | YES  |     | NULL    |       |
+| Legal_person                         | double(30,10) | YES  |     | NULL    |       |
+| Other_limited_circulation            | double(30,10) | YES  |     | NULL    |       |
+| State_Shareholding                   | double(30,10) | YES  |     | NULL    |       |
+| StateOwnedLegalPersonShares          | double(30,10) | YES  |     | NULL    |       |
+| Other_domestic_shares                | double(30,10) | YES  |     | NULL    |       |
+| Foreign_shares_limited               | double(30,10) | YES  |     | NULL    |       |
+| Dead_line                            | date          | YES  |     | NULL    |       |
+| Total_non_circulation_stock          | double(30,10) | YES  |     | NULL    |       |
+| Listed_A_shares                      | double(30,10) | YES  |     | NULL    |       |
+| Listed_B_shares                      | double(30,10) | YES  |     | NULL    |       |
+| Listed_H_shares                      | double(30,10) | YES  |     | NULL    |       |
+| Overseas_circulation_stock           | double(30,10) | YES  |     | NULL    |       |
+| Restricted_A_shares                  | double(30,10) | YES  |     | NULL    |       |
+| Other_domestic_ownership_shares      | double(30,10) | YES  |     | NULL    |       |
+| Domestic_legal_person_shares         | double(30,10) | YES  |     | NULL    |       |
+| Other_domestic_natural_person_shares | double(30,10) | YES  |     | NULL    |       |
+| Total_foreign_ownership              | double(30,10) | YES  |     | NULL    |       |
+| Foreign_legal_person_shares          | double(30,10) | YES  |     | NULL    |       |
+| Foreign_natural_person_shares        | double(30,10) | YES  |     | NULL    |       |
+| Non_tradable_equity                  | double(30,10) | YES  |     | NULL    |       |
+| State_owned_legal_person_shares      | double(30,10) | YES  |     | NULL    |       |
+| Raised_legal_person_shares           | double(30,10) | YES  |     | NULL    |       |
+| General_corporate_shares             | double(30,10) | YES  |     | NULL    |       |
+| Turn_allotment                       | double(30,10) | YES  |     | NULL    |       |
+| Internal_employee_stock              | double(30,10) | YES  |     | NULL    |       |
+| Preferred_stock                      | double(30,10) | YES  |     | NULL    |       |
+| Reasons_for_changes_in_share_capital | char(100)     | YES  |     | NULL    |       |
+| Report_date                          | date          | NO   | PRI | NULL    |       |
+| Date_changes                         | date          | YES  |     | NULL    |       |
+| Negotiable_A_shares                  | double(30,10) | YES  |     | NULL    |       |
+| State_owned_shares                   | double(30,10) | YES  |     | NULL    |       |
+| Legal_person_shares                  | double(30,10) | YES  |     | NULL    |       |
+| H_shares                             | double(30,10) | YES  |     | NULL    |       |
+| DomesticLegalPersonShares            | double(30,10) | YES  |     | NULL    |       |
+| StateOwnedShares                     | double(30,10) | YES  |     | NULL    |       |
+
+supervisoryboard
+| Company_code        | char(100) | NO   | PRI | NULL    |       |
+| name                | char(100) | NO   | PRI | NULL    |       |
+| post                | char(100) | NO   | PRI | NULL    |       |
+| Date_of_appointment | date      | NO   | PRI | NULL    |       |
+| Date_of_separation  | date      | YES  |     | NULL    |       |
+
+taxratedetail
+| Company_code           | char(100)     | NO   | PRI | NULL    |       |
+| Announcement_date      | date          | NO   | PRI | NULL    |       |
+| Tax_item               | char(100)     | NO   | PRI | NULL    |       |
+| Tax_payable            | double(30,10) | YES  |     | NULL    |       |
+| The_effective_tax_rate | double(30,10) | YES  |     | NULL    |       |
+| Remark                 | text          | YES  |     | NULL    |       |
+
+tenlargestshareholders
+| Company_code                                    | char(100)     | NO   | PRI | NULL    |       |
+| Shareholder_name                                | varchar(100)  | NO   | PRI | NULL    |       |
+| The_number_of_shares                            | double(30,10) | YES  |     | NULL    |       |
+| Shareholding_ratio                              | varchar(100)  | YES  |     | NULL    |       |
+| The_number_of_shares_decrease_QoQ               | double(30,10) | YES  |     | NULL    |       |
+| Share_property                                  | char(100)     | YES  |     | NULL    |       |
+| deadline                                        | date          | NO   | PRI | NULL    |       |
+| Shareholders_ranking                            | char(100)     | NO   | PRI |         |       |
+| The_number_of_shares_of_the_total_share_capital | double(30,10) | YES  |     | NULL    |       |
+| Number_of_shares                                | double(30,10) | YES  |     | NULL    |       |
+| The_total_capital_ratio                         | double(30,10) | YES  |     | NULL    |       |
+| Increase_or_decrease                            | char(100)     | YES  |     | NULL    |       |
+| Equity_nature                                   | char(100)     | YES  |     | NULL    |       |
+| The_number_of_shares_gu                         | double(30,10) | YES  |     | NULL    |       |
+
+tentradableshareholders
+| Company_code                         | char(100)     | NO   | PRI | NULL    |       |
+| date                                 | date          | NO   | PRI | NULL    |       |
+| rank                                 | char(100)     | NO   | PRI | NULL    |       |
+| Name_of_shareholder                  | varchar(100)  | NO   | PRI | NULL    |       |
+| Nature_of_shareholders               | char(100)     | YES  |     | NULL    |       |
+| Number_of_shares                     | double(30,10) | YES  |     | NULL    |       |
+| Proportion_of_tradable_share_capital | double(30,10) | YES  |     | NULL    |       |
+| Increase_or_decrease                 | char(100)     | YES  |     | NULL    |       |
+| Equity_nature                        | char(100)     | YES  |     | NULL    |       |
+
+xsbfhpg
+| Company_code                         | char(100)     | NO   | PRI | NULL    |       |
+| year                                 | char(100)     | NO   | PRI | NULL    |       |
+| Launched_objects                   | char(100)    | YES  |     | NULL    |       |
+| Ex_dividend_day                      | date          | YES  |     | NULL    |       |
+| Equity_base                          | double(30,10) | YES  |     | NULL    |       |
+| PreTaxBonus_divide_PTBCStockCurrency | double(30,10) | YES  |     | NULL    |       |
+| Lower_pre_tax_dividend               | double(30,10) | YES  |     | NULL    |       |
+| Dividend                             | double(30,10) | YES  |     | NULL    |       |
+| PreTaxBonus_divide_PreTaxBonusCap    | double(30,10) | YES  |     | NULL    |       |
+| After_tax_dividend                   | double(30,10) | YES  |     | NULL    |       |
+| Exchange_rate_of_foreign_exchange    | double(30,10) | YES  |     | NULL    |       |
+| Cash_dividend_payment_startDay       | char(100)     | YES  |     | NULL    |       |
+| Cash_dividend_payment_deadline       | char(100)     | YES  |     | NULL    |       |
+| The_proportion_of_bonus              | double(30,10) | YES  |     | NULL    |       |
+| Capitalization_ratio                 | double(30,10) | YES  |     | NULL    |       |
+| Surplus_public_reserve_ratio         | double(30,10) | YES  |     | NULL    |       |
+| Capital_accumulation_fund_ratio      | double(30,10) | YES  |     | NULL    |       |
+| Share_ratio_gift                     | double(30,10) | YES  |     | NULL    |       |
+| Total_dividend_amount                | double(30,10) | YES  |     | NULL    |       |
+| Total_number_of_bonus_shares         | double(30,10) | YES  |     | NULL    |       |
+| Total_capitalization_Number          | double(30,10) | YES  |     | NULL    |       |
+| Total_number_of_shares_gift          | double(30,10) | YES  |     | NULL    |       |
+| Lower_pre_tax_dividend_RMB           | double(30,10) | YES  |     | NULL    |       |

@@ -1,0 +1,269 @@
+1、通过getCsvFiles.py文件，运行能够获得dataDic.xlsx，也就是数据字典的所有表，并且将表生成一个一个的csv文件，每一个csv文件对应着一个表里面的内容。但是问题是，数据库中有49个表，但是数据字典中只有48个表。
+这个csv文件只是为了读取方便才生成的，里面可能还是有一些错误，明显的就是None位置的空余。有的就是空余，但是csv的文件给删除了。
+2、现在对于表中每一项的类型还没有做查找，首先应该查找的是每一个表的字段是不是正确。然后在查找表的字段的类型是不是正确。
+
+3、找到的问题：
+	1、业绩报告 ：
+	在业绩预告中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	2、配股：
+	在配股中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	3、主要股东：
+	在主要股东中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	4、应交增值税表
+	在应交增值税表中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code  
+
+	5、十大流通股东
+	在十大流通股东中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在十大流通股东中，有一个表头是股东性质，数据库中是Nature_of_shareholders，数据字典中是Nature of shareholders，将数据字典中改成：Nature_of_shareholders
+
+	6、坏账准备表
+	在坏账准备表中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在坏账准备表中，有一个表头是可供出售金融资产减值准备，数据库中是ProvisionForImpairmentOfFinancialAssetsAvailableForSale，数据字典中是 Provision_for_impairment_of_financial_assets_available_for_sale ，将数据字典中改成：ProvisionForImpairmentOfFinancialAssetsAvailableForSale  
+
+	7、财务指标：
+	在财务指标中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在财务指标中，有一个表头是扣除非经常性损益后的每股收益(元)，数据库中是EarningPerShareAfterDeductNonRecurringGainsAndLosse，数据字典中是Earnings_per_share_after_deducting_non_recurring_gains_and_losses，将数据字典中改成：EarningPerShareAfterDeductNonRecurringGainsAndLosse
+	在财务指标中，有两个表头，分别是：每股净资产_调整后(元) 和 调整后的每股净资产(元)， 他们 两个重复， 删除调整后的每股净资产(元)。
+	在财务指标中，有两个表头，分别是：扣除非经常性损益的净利润(元) 和 扣除非经常性损益后的净利润(元)， 他们 两个重复， 删除：扣除非经常性损益的净利润(元).  同时数据库中的是：NetProfitAfterDeductingNonRecurringGainsAndLosses 数据字典中的是：Net_profit_after_deducting_non_recurring_gains_and_losses ，将数据字典中的改成：NetProfitAfterDeductingNonRecurringGainsAndLosses
+	在财务指标中，有一个表头是股东权益与固定资产比率(%)，数据库中是Shareholders_equity_and_fixed_assets_ratio， 数据字典中是Shareholders'_equity_and_fixed_assets_ratio，  将数据字典中改成：Shareholders_equity_and_fixed_assets_ratio
+	在财务指标中，有两个表头，分别是：资产负债比率(%) 和 资产负债率(%)， 他们 两个重复， 删除资产负债率(%)。
+	在财务指标中，有两个表头，分别是：每股经营现金流(元), 和 每股经营性现金流(元)， 他们 两个重复， 删除 每股经营性现金流(元)。
+	在财务指标中，有两个表头，分别是：存货周转率(次), 和 存货周转率， 他们 两个重复， 删除 存货周转率。
+	在财务指标中，有一个表头是year，数据库中没有，而且感觉没有什么用，直接删除。。
+	在财务指标中，有一个表头是 Net_profit_after_deducting_non_recurring_gains_and_losses,报错了，但是没找到这个表头！！
+	在财务指标中，有两个表头，分别是：稀释每股收益(元), 和 摊薄每股收益(元)， 他们 两个重复， 删除 摊薄每股收益(元)。
+	在财务指标中，有一个表头是扣除非经常性损益后的基本每股收益(元)，数据库中是BasicEarningsPerShareAfterDeductNonRecurrGainLosse， 数据字典中是Basic_earnings_per_share_after_deducting_non_recurring_gains_and_losses，  将数据字典中改成：BasicEarningsPerShareAfterDeductNonRecurrGainLosse
+	在财务指标中，有两个表头，分别是：净资产收益率-摊薄(%), 和 净资产收益率_摊薄(%)， 他们 两个重复， 删除 净资产收益率_摊薄(%)
+	在财务指标中，有一个表头是扣除非经常性损益后的稀释每股收益(元)，数据库中是DilutedEarningPerShareAfterDeductNonRecurringGainLosse， 数据字典中是Diluted_earnings_per_share_after_deducting_non_recurring_gains_and_losses，  将数据字典中改成：DilutedEarningPerShareAfterDeductNonRecurringGainLosse
+	在财务指标中，有一个表头是净资产收益率_主营业务利润摊薄(%)，数据库中是RateOfReturnOnNetAssetsMainBusinessProfitsDiluted， 数据字典中是Rate_of_return_on_net_assets_main_business_profits_diluted，  将数据字典中改成：RateOfReturnOnNetAssetsMainBusinessProfitsDiluted
+	在财务指标中，有一个表头是净资产收益率_主营业务利润加权(%)，数据库中是RateOfReturnOnNetAssetsMainBusinessProfitsWeighted， 数据字典中是Rate_of_return_on_net_assets_main_business_profits_weighted，  将数据字典中改成：RateOfReturnOnNetAssetsMainBusinessProfitsWeighted
+	在财务指标中，有两个表头，分别是：报表结束日期, 和 报表结束日期， 他们 两个重复， 删除报表结束日期
+	在财务指标中，有两个表头，分别是：净资产收益率_营业利润加权(%), 和 净资产收益率_营业利润加权(%)， 他们 两个重复删除一个
+	在财务指标中，有两个表头，分别是：每股收益_营业利润摊薄(元), 和 每股收益_营业利润摊薄(元), 他们 两个重复删除一个
+	在财务指标中，有两个表头，分别是：每股收益_营业利润加权(元), 和 每股收益_营业利润加权(元),他们 两个重复删除一个
+	在财务指标中，有两个表头，分别是：会计年度, 和 会计年度,他们 两个重复删除一个
+	在财务指标中，有两个表头，分别是：报表结束日期, 和 报表结束日期 两个重复删除一个
+	在财务指标中，有两个表头，分别是：报表起始日期, 和 报表起始日期， 他们 两个重复， 删除 报表起始日期, 而且数据库中没有报表起始日期 这个表头，Report_start_date
+	在财务指标中，有两个表头是净利润同比增长率(%)，和净利润增长率(%) 冲突，将净利润同比增长率(%) 命名改成：Net_profit_growth_year_on_year_rate， 但是这时候数据库中就没有这一项。。。。同时对于净利润增长率（%）数据字典中是：Net_profit_growth_rate ，数据库中是NetProfitGrowthRate，将数据字典改成数据库中的样子。
+	在财务指标中，数据库中有几项，对于数据字典中是没有的。他们的字段分别是： InventoryTurnoverRate、 ReturnOnNetAssetsDiluted、 NetAssetsPerShareAdjusted、 NetProfitAfterDeductingNonRecurrGainsAndLosses、 OperatingCashFlowPerShare、 DilutedEarningsPerShare、  AssetLiabilityRatio
+
+	8、财务摘要
+	在财务摘要中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	9、公司板块
+	在公司板块中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	10、现金流量
+	在现金流量报告中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在现金流量表中，数据库的表中有几个多余的表头，分别是： 'NetCashFlowsFromOperatingActivities', 'Absorption_of_cash_from_investment', 'ImpactOfExchangeRateChangesOnCashAndEquivalents', 'Cash_paid_for_dividends_profits_interest', 'Company_code', 'Balance_of_cash_and_equivalents_at_the_endPlus', 'Cash_paid_for_interest', 'NetIncreaseInCashAndCashEquivalents', 'CashReceivedFromOtherFinancingActivities', 'BalanceOfCashAndEquivalentsAtTheBeginPlus'
+
+	11、股东人数明细
+	在股东人数明细中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+
+	12、上市公司主表
+	在上市公司主表中，有一个表头是总经理，数据库中是General_manager， 数据字典中是General manager，  将数据字典中改成：General_manager
+	在上市公司主表中，有一个表头是公司简介，数据库中是 Company_profile 数据字典中是 Company profile ，  将数据字典中改成： Company_profile
+	在上市公司主表中，有两个表头，分别是：英文名称, 和 公司英文名称， 他们 两个重复， 删除 英文名称,
+	在上市公司主表中，有两个表头，分别是：董事会秘书, 和 董事会秘书， 他们 两个重复， 删除 一个,
+	在上市公司主表中，有四个表头，分别是：联系传真, 公司传真 ，传真和 公司传真， 他们 四个重复， 删除联系传真,  传真 只留下一个,
+	在上市公司主表中，有三个表头，分别是：电子邮件, 公司电子信箱 和 电子信箱， 他们 三个重复， 删除电子邮件,  电子信箱 只留下一个,
+	在上市公司主表中，有三个表头，分别是：公司网址, 公司网址 和 公司网站， 他们 三个重复， 删除公司网址, 公司网址 只留下一个,
+	在上市公司主表中，有两个表头，分别是：邮政编码, 和 邮政编码， 他们 两个重复， 删除 一个,
+	在上市公司主表中，有两个表头，分别是：注册地址, 和 注册地址， 他们 两个重复， 删除 一个,
+	在上市公司主表中，有两个表头，分别是：办公地址, 和办公地址， 他们 两个重复， 删除 一个,
+	在上市公司主表中，有两个表头，分别是：公司简介, 和公司简介， 他们 两个重复， 删除 一个,
+	在上市公司主表中，有两个表头，分别是：经营范围, 和经营范围， 他们 两个重复， 删除 一个,
+	在上市公司主表中，有两个表头，分别是：法人代表, 和法人代表人， 他们 两个重复， 删除 法人代表,
+	在上市公司主表中，有三个表头，分别是：电话, 公司电话 和 公司电话， 他们 三个重复， 删除电话, 公司电话 只留下一个,
+	在上市公司主表中，有两个表头，分别是：上市日期, 和挂牌日期， 他们 两个重复， 删除 挂牌日期,
+	在上市公司主表中，有两个表头，分别是：行业, 和所属行业， 他们 两个重复， 删除 行业,
+	在上市公司主表中，有两个表头，分别是：注册资本(万), 和注册资本(万元)， 他们 两个重复，删除注册资本(万),
+	在上市公司主表中，有两个表头，分别是：公司地址, 和地址， 他们 两个重复，地址,
+	在上市公司主表中，有两个表头，分别是：员工总数, 和员工总数(人)， 他们 两个重复，删除员工总数,
+	在上市公司主表中，数据库的表中有多余的字段，分别是：'BelongToIndustry', 'CompanyAddress', 'Articles_of_corporation_URL', 'ListedDate', 'Registered_capital_wanyuan', 'LegalRepresentative', 'TotalNumberOfEmployees', 'CompanyEnglishName'
+
+	13、分红
+	在分红中，有一个表头是股东大会公告日，数据库中是AnnouncementDateOfTheGeneralMeetingOfShareholders， 数据字典中是 Announcement_date_of_the_general_meeting_of_shareholders ，  将数据字典中改成：AnnouncementDateOfTheGeneralMeetingOfShareholders
+	在分红中，有两个表头，分别是：公告日期, 和实施公告日， 他们 两个重复，删除实施公告日,
+	在分红中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在分红中，有两个表头，分别是：红股上市日, 和红股上市交易日， 他们 两个重复，删除红股上市交易日,
+	在分红中，有一个表头是报告期日期，名字是Reporting_period 数据库中没有，
+	在分红中，数据库中多了一个字段是：  The_date_of_listing_and_trade 
+
+	13、利润表
+	在利润表中，有一个表头是对联营企业和合营企业的投资权益，数据库中是 InvestmentInterestsInJointVenturesAndJointVentures 数据字典中是 Investment_interests_in_joint_ventures_and_joint_ventures ，  将数据字典中改成： InvestmentInterestsInJointVenturesAndJointVentures
+	在利润表中，有两个表头，分别是：营业利润, 和 营业利润  他们 两个重复，删除 营业利润,
+	在利润表中，有两个表头，分别是：营业外收入, 和 营业外收入  他们 两个重复，删除 营业外收入,
+	在利润表中，有两个表头，分别是：利润总额, 和 利润总额  他们 两个重复，删除 利润总额,
+	在利润表中，有两个表头，分别是：少数股东损益, 和 少数股东损益  他们 两个重复，删除 少数股东损益,
+	在利润表中，有两个表头，分别是：资产总额(元), 和 资产总额(元)  他们 两个重复，删除 资产总额(元),
+	在利润表中，有几个多余的表头，分别是： 'Business_profit_third', 'Gross_profit_fourth', 'Company_code', 'Nonoperating_incomePlus'
+
+	15、主要业务
+	在主要业务中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在主要业务的数据库中的表格中，有一个多余的表头，名字是：'Field'
+
+	16、限售解禁
+	在限售解禁中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	17、公司相关所属系
+	在公司相关所属系中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	18、上市公告
+	在上市公告中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	19、现金流量表
+	在现金流量表中，有一个表头是 客户贷款及垫款净减少额，数据库中是 TheNetDecreaseAmountOfLoansAdvancesToCustomer 数据字典中是 The_net_decrease_the_amount_of_loans_advances_to_customers ，  将数据字典中改成： TheNetDecreaseAmountOfLoansAdvancesToCustomer
+	在现金流量表中，有一个表头是 同业及其他金融机构存放款 ， 数据库中是 BanksAndOtherFinancialInstitutionsToDepositsLoans 数据字典中是 Banks_and_other_financial_institutions_to_deposits_loans ，  将数据字典中改成： BanksAndOtherFinancialInstitutionsToDepositsLoans
+	在现金流量表中，有一个表头是 处置交易性金融资产净增加额 ， 数据库中是 NetIncreaseInTheDisposalOfTradingFinancialAssets 数据字典中是 Net_increase_in_the_disposal_of_trading_financial_assets ，  将数据字典中改成： NetIncreaseInTheDisposalOfTradingFinancialAssets
+	在现金流量表中，有一个表头是 处置可供出售金融资产净减少额 ， 数据库中是 NetReductionInDisposalAvailableForSaleFinancialAssets 数据字典中是 Net_reduction_in_disposal_available_for_sale_financial_assets ，  将数据字典中改成： NetReductionInDisposalAvailableForSaleFinancialAssets
+	在现金流量表中，有一个表头是 处置固定资产、无形资产及其他资产而收到的现金 ， 数据库中是 CashReceivedFromDisposalFixedIntangibleOtherAssets 数据字典中是 Cash_received_from_disposal_fixed_intangible_other_assets ，  将数据字典中改成： CashReceivedFromDisposalFixedIntangibleOtherAssets
+	在现金流量表中，有一个表头是 取得子公司及其他营业单位所收到的现金净额 ， 数据库中是 NetCashReceivedFromSubsidiariesOtherBusinessUnits 数据字典中是 Net_cash_received_from_subsidiaries_other_business_units ，  将数据字典中改成： NetCashReceivedFromSubsidiariesOtherBusinessUnits
+	在现金流量表中，有一个表头是 购买子公司、联营企业及合营企业投资所支付的现金净额 ， 数据库中是 NetCashPaidForPurchaseSubsidiariesAssociateJointVenture 数据字典中是 Net_cash_paid_for_purchase_of_subsidiaries_associates_joint_ventures ，  将数据字典中改成： NetCashPaidForPurchaseSubsidiariesAssociateJointVenture
+	在现金流量表中，有一个表头是 发行证券化资产所吸收的现金 ， 数据库中是 TheCashThatIsAbsorbedByTheSecuritizationOfAssets 数据字典中是 The_cash_that_is_absorbed_by_the_securitization_of_assets ，  将数据字典中改成： TheCashThatIsAbsorbedByTheSecuritizationOfAssets
+	在现金流量表中，有两个表头，分别是： 偿还债务支付的现金, 和 偿还债务所支付的现金  他们 两个重复，删除 偿还债务支付的现金,
+	在现金流量表中，有一个表头是 长期待摊费用摊销 ， 数据库中是 Amortization_of_long_term_prepaid_expenses 数据字典中是 Amortization_of_long-term_prepaid_expenses ，  将数据字典中改成： Amortization_of_long_term_prepaid_expenses
+	在现金流量表中，有两个表头，分别是：经营活动现金流量净额 和 经营活动产生的现金流量净额  他们 两个重复，删除 经营活动产生的现金流量净额,
+	在现金流量表中，有两个表头，分别是：吸收投资所收到的现金 和 收回投资收到的现金  他们 两个重复，删除 收回投资收到的现金,
+	在现金流量表中，有一个表头是 处置固定资产、无形资产和其他长期资产收回的现金净额 ， 数据库中是 NetCashForFixedIntangibleAndOtherLongTermAssets 数据字典中是 Net_cash_for_fixed_intangible_and_other_long_term_assets ，  将数据字典中改成： NetCashForFixedIntangibleAndOtherLongTermAssets
+	在现金流量表中，有两个表头，分别是： 收到其他与筹资活动相关的现金 和 收到其他与筹资活动有关的现金  他们 两个重复，删除 收到其他与筹资活动有关的现金,
+	在现金流量表中，一个表头是 偿还债务所支付的现金 ，名字是 Cash_paid_for_debt  但是数据库中没有该表头
+	在现金流量表中，有两个表头，分别是：分配股利、利润或偿付利息支付的现金 和 分配股利、利润或偿还利息支付的现金  他们 两个重复，删除 分配股利、利润或偿还利息支付的现金,
+	在现金流量表中，有两个表头，分别是：汇率变动对现金的影响 和汇率变动对现金及现金等价物的影响  他们 两个重复，删除 汇率变动对现金的影响,
+	在现金流量表中，有两个表头，分别是：现金及现金等价物净增加额 和现金及现金等价物净增加额  他们 两个重复，删除 现金及现金等价物净增加额,
+	在现金流量表中，有两个表头，分别是：加:期初现金及现金等价物余额 和 期初现金及现金等价物余额  他们 两个重复，删除 加:期初现金及现金等价物余额
+	在现金流量表中，有两个表头，分别是：期末现金及现金等价物余额 和 期末现金及现金等价物余额  他们 两个重复，删除 期末现金及现金等价物余额
+	在现金流量表中，一个表头是 报告期 ，名字是 Reporting_period  但是数据库中没有该表头
+	在现金流量表中，他的数据库中的表有多余的字段，分别是： 'NetCashFlowsFromOperatingActivities',  'Absorption_of_cash_from_investment', 'ImpactOfExchangeRateChangesOnCashAndEquivalents', 'Cash_paid_for_dividends_profits_interest', 'Company_code', 'Balance_of_cash_and_equivalents_at_the_endPlus', 'Cash_paid_for_interest', 'NetIncreaseInCashAndCashEquivalents', 'CashReceivedFromOtherFinancingActivities',  'BalanceOfCashAndEquivalentsAtTheBeginPlus'
+
+	20、盈利趋势
+	在盈利趋势中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在盈利趋势中，有一个表头是 单季度.营业收入(元)， 数据库中是 SingleQuarter_operating_income 数据字典中是 SingleQuarter_operating income ，  将数据字典中改成： SingleQuarter_operating_income
+
+	21、高管人员
+	在高管人员中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	22、财务附注
+	在财务附注中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	23、公司相关所属证券
+	在公司相关所属证券中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	24、股本结构
+	在股本结构中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在股本结构中，有一个表头是 国有法人持股 ，数据库中是StateOwnedLegalPersonShares，  数据字典中是  State-owned_legal_person_shares，将数据字典中改成：StateOwnedLegalPersonShares
+	在股本结构中，有两个表头，分别是：境内法人持股 和 境内法人股  他们 两个重复，删除 境内法人股
+	在股本结构中，有一个表头是 内部职工股 ，数据库中是 Internal_employee_stock   数据字典中是  Internal employee stock，将数据字典中改成： Internal_employee_stock
+	在股本结构中，有一个表头是时间，名称是Tim，数据库中没有。
+	在股本结构中，有两个表头，分别是：国家股 和 国有股  他们 两个重复，删除 国家股
+	在股本结构中，对应的数据库的表中，有多余的两个字段： 'DomesticLegalPersonShares', 'StateOwnedShares'
+
+	25、税率明细
+	在税率明细中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	26、监事会
+	在监事会中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	27、基金持股
+	在基金持股中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	28、存货明细
+	在存货明细中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	29、公司相关所属指数
+	在公司相关所属指数中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+
+	30、招股说明
+	在招股说明中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	31、股东权益增减
+	在股东权益增减中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+
+	32、募资投向
+	在募资投向中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在募资投向中，有一个表头是 实际募资金额(元)，数据库中是The_actual_amount_of_fund_raising， 数据字典中是The_actual_amount_of_fund-raising， 将数据字典中改成 ： The_actual_amount_of_fund_raising
+	在募资投向中，有一个表头是 货币募集金额(元)，数据库中是 Amount_of_money_raised  数据字典中是 Announcement_time， 将数据字典中改成 ： Amount_of_money_raised
+	在募资投向中，有一个表头是 非货币募集金额(元)，数据库中是 Raise_the_amount_of_non_monetary  数据字典中是 Raise_the_amount_of_non-monetary， 将数据字典中改成 ： Raise_the_amount_of_non_monetary
+
+	33、利润报告
+	在利润报告中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	34、董事会
+	在董事会中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	35、十大股东
+	在十大股东中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在十大股东中，有一个表头是 环比增减股数(股)，数据库中是The_number_of_shares_decrease_QoQ ，数据字典中是The_number_of_shares_decrease_QoQ， 将数据字典中改成： The_number_of_shares_decrease_QoQ
+	在十大股东中，有一个表头是 截止时间，数据库中是 deadline ，数据字典中是Dead_line,， 将数据字典中改成： deadline
+	在十大股东中，有两个表头，分别是：持股数(股) 和持股数  他们 两个重复，删除 持股数
+	在十大股东中，有一个表头是 信息更新日期，名字是： Information_update ，数据库中没有。
+	在十大股东中，有一个表头是 日期，名字是： date ，数据库中没有。
+	在十大股东中，有一个表头是 排名，名字是： rank ，数据库中没有。
+	在十大股东对应的表中的数据库中，有多余的字段，是'The_number_of_shares_gu'
+
+	36、收入趋势
+	在收入趋势中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在收入趋势中，有一个表头是单季度.营业收入(元)，数据库中是SingleQuarter_operating_income， 数据字典中是SingleQuarter_operating income， 将数据字典中改成： SingleQuarter_operating_income
+
+	37、新股发行
+	在新股发行中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在新股发行中，有一个表头是证券代码，数据库中是Stock_code，数据字典中是 Security_code， 将数据字典中改成： Stock_code
+	在新股发行中，有一个表头是二级市场配售有效申购户数，数据库中是 PlacingEffectivePurchaseInSecondaryMarketHouseholds，数据字典中是 Placing_the_effective_purchase_in_the_secondary_market_households， 将数据字典中改成： PlacingEffectivePurchaseInSecondaryMarketHouseholds
+	在新股发行中，有两个发行价格，删除其中一个。
+	在新股发行中，有两个发行数量，删除其中一个。
+	在新股发行中，有两个上市日期，删除其中一个。
+	在新股发行中，有两个发行费用(元)，删除其中一个。
+	在新股发行中，有两个向基金配售数量，删除其中一个。
+	在新股发行中，有两个面值，删除其中一个。
+	在新股发型的数据库的表中，还有几个多余的字段，分别是：'Issue_price_yuan', 'Issue_expenses_yuan', 'Issue_number_gu', 'The_number_of_funds_to_the_fund_gu', 'denomination_yuan'
+
+	38、账款明细
+	在账款明细中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	39、资产负债报告
+	在资产负债报告中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	40、收入构成
+	在收入构成中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+
+	41、增发表
+	在增发表中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在增发表中，有两个发行价格，删除其中一个。
+	在增发表中，有两个发行数量，删除其中一个。
+	在增发表中，有两个募集资金合计，删除其中一个。
+	在增发表中，有一个表头是股东大会公告日，数据库中是AnnouncementDateOfTheGeneralMeetingOfShareholders，数据字典中是Announcement_date_of_the_general_meeting_of_shareholders，将数据字典中改成：AnnouncementDateOfTheGeneralMeetingOfShareholders
+	在增发表中，有一个表头是获准日期，名字是： Date_approved， 数据库中没有。
+	在增发表的数据库的表中，有多余的字段，是：'Issue_price_yuan', 'Total_funds_raised_yuan', 'Issue_number_gu'
+
+	42、账龄结构
+	在账龄结构中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	43、资产减值表
+	在资产减值表中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在资产减值表中，有一个表头是可供出售金融资产减值准备 ，数据库中是ProvisionForImpairmentOfFinancialAssetsAvailableForSale， 数据字典中是Provision_for_impairment_of_financial_assets_available_for_sale ，将数据字典中改成：ProvisionForImpairmentOfFinancialAssetsAvailableForSale
+
+	44、新三板分红配股
+	在新三板分红配股中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+	在新三板分红配股中，有一个表头是税前红利下限（股票币种）（元），数据库中是Lower_pre_tax_dividend， 数据字典中是Lower pre tax dividend ，将数据字典中改成：Lower_pre_tax_dividend
+	在新三板分红配股中，有一个表头是 税前红利下限（人民币）（元），但是数据库中命名是Lower_pre_tax_dividend_RMB，数据字典中是：Lower pre tax dividend， 将它改成 ：  Lower_pre_tax_dividend_RMB
+
+	45、流通股东
+	在流通股东中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	46、投资评级
+	在投资评级中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	47、盈利预测
+	在盈利预测中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
+
+	48、利润趋势
+	数据字典中没有利润趋势这个表，但是数据库中有，表名是： profittrend，他的字段是： 'SingleQuarter_sales_margin', 'SingleQuarter_ROE', 'Company_code', 'SingleQuarter_cashflow_fromInvestActivity', 'SingleQuarter_ROA', 'Reporting_period', 'SingleQuarter_operating_cost', 'SingleQuarter_total_operating_cost', 'SingleQuarter_cashflow_fromOPActivity', 'SingleQuarter_total_profit', 'SingleQuarter_total_operating_income', 'SingleQuarter_gross_margin', 'SingleQuarter_netIncrease_InCash', 'SingleQuarter_netProfit_belongtoParent', 'SingleQuarter_cashflow_fromFinanceActivity', 'SingleQuarter_EPS', 'SingleQuarter_operating_profit', 'SingleQuarter_operating_income', 'SingleQuarter_net_profit'
+
+	49、现金流量报告
