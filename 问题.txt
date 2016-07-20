@@ -56,9 +56,8 @@
 	9、公司板块
 	在公司板块中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
 
-	10、现金流量
+	10、现金流量报告
 	在现金流量报告中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
-	在现金流量表中，数据库的表中有几个多余的表头，分别是： 'NetCashFlowsFromOperatingActivities', 'Absorption_of_cash_from_investment', 'ImpactOfExchangeRateChangesOnCashAndEquivalents', 'Cash_paid_for_dividends_profits_interest', 'Company_code', 'Balance_of_cash_and_equivalents_at_the_endPlus', 'Cash_paid_for_interest', 'NetIncreaseInCashAndCashEquivalents', 'CashReceivedFromOtherFinancingActivities', 'BalanceOfCashAndEquivalentsAtTheBeginPlus'
 
 	11、股东人数明细
 	在股东人数明细中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
@@ -94,7 +93,7 @@
 	在分红中，有一个表头是报告期日期，名字是Reporting_period 数据库中没有，
 	在分红中，数据库中多了一个字段是：  The_date_of_listing_and_trade 
 
-	13、利润表
+	14、利润表   ProfitTable
 	在利润表中，有一个表头是对联营企业和合营企业的投资权益，数据库中是 InvestmentInterestsInJointVenturesAndJointVentures 数据字典中是 Investment_interests_in_joint_ventures_and_joint_ventures ，  将数据字典中改成： InvestmentInterestsInJointVenturesAndJointVentures
 	在利润表中，有两个表头，分别是：营业利润, 和 营业利润  他们 两个重复，删除 营业利润,
 	在利润表中，有两个表头，分别是：营业外收入, 和 营业外收入  他们 两个重复，删除 营业外收入,
@@ -102,10 +101,12 @@
 	在利润表中，有两个表头，分别是：少数股东损益, 和 少数股东损益  他们 两个重复，删除 少数股东损益,
 	在利润表中，有两个表头，分别是：资产总额(元), 和 资产总额(元)  他们 两个重复，删除 资产总额(元),
 	在利润表中，有几个多余的表头，分别是： 'Business_profit_third', 'Gross_profit_fourth', 'Company_code', 'Nonoperating_incomePlus'
+	PS：里面有很多的内容是NULL。。
 
 	15、主要业务
 	在主要业务中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
 	在主要业务的数据库中的表格中，有一个多余的表头，名字是：'Field'
+	PS：此表是为空，可能是没有插入，或者插入有问题。
 
 	16、限售解禁
 	在限售解禁中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
@@ -116,7 +117,7 @@
 	18、上市公告
 	在上市公告中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
 
-	19、现金流量表
+	19、现金流量表    CashFlow
 	在现金流量表中，有一个表头是 客户贷款及垫款净减少额，数据库中是 TheNetDecreaseAmountOfLoansAdvancesToCustomer 数据字典中是 The_net_decrease_the_amount_of_loans_advances_to_customers ，  将数据字典中改成： TheNetDecreaseAmountOfLoansAdvancesToCustomer
 	在现金流量表中，有一个表头是 同业及其他金融机构存放款 ， 数据库中是 BanksAndOtherFinancialInstitutionsToDepositsLoans 数据字典中是 Banks_and_other_financial_institutions_to_deposits_loans ，  将数据字典中改成： BanksAndOtherFinancialInstitutionsToDepositsLoans
 	在现金流量表中，有一个表头是 处置交易性金融资产净增加额 ， 数据库中是 NetIncreaseInTheDisposalOfTradingFinancialAssets 数据字典中是 Net_increase_in_the_disposal_of_trading_financial_assets ，  将数据字典中改成： NetIncreaseInTheDisposalOfTradingFinancialAssets
@@ -139,6 +140,9 @@
 	在现金流量表中，有两个表头，分别是：期末现金及现金等价物余额 和 期末现金及现金等价物余额  他们 两个重复，删除 期末现金及现金等价物余额
 	在现金流量表中，一个表头是 报告期 ，名字是 Reporting_period  但是数据库中没有该表头
 	在现金流量表中，他的数据库中的表有多余的字段，分别是： 'NetCashFlowsFromOperatingActivities',  'Absorption_of_cash_from_investment', 'ImpactOfExchangeRateChangesOnCashAndEquivalents', 'Cash_paid_for_dividends_profits_interest', 'Company_code', 'Balance_of_cash_and_equivalents_at_the_endPlus', 'Cash_paid_for_interest', 'NetIncreaseInCashAndCashEquivalents', 'CashReceivedFromOtherFinancingActivities',  'BalanceOfCashAndEquivalentsAtTheBeginPlus'
+	在现金流量表中，数据库的表中有几个多余的表头，分别是： 'NetCashFlowsFromOperatingActivities', 'Absorption_of_cash_from_investment', 'ImpactOfExchangeRateChangesOnCashAndEquivalents', 'Cash_paid_for_dividends_profits_interest', 'Company_code', 'Balance_of_cash_and_equivalents_at_the_endPlus', 'Cash_paid_for_interest', 'NetIncreaseInCashAndCashEquivalents', 'CashReceivedFromOtherFinancingActivities', 'BalanceOfCashAndEquivalentsAtTheBeginPlus'
+
+	PS：这个表可能也有点问题，因为里面除了company_code，其余大部分是null或者0.000000
 
 	20、盈利趋势
 	在盈利趋势中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
@@ -153,7 +157,7 @@
 	23、公司相关所属证券
 	在公司相关所属证券中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
 
-	24、股本结构
+	24、股本结构    StockStructure
 	在股本结构中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
 	在股本结构中，有一个表头是 国有法人持股 ，数据库中是StateOwnedLegalPersonShares，  数据字典中是  State-owned_legal_person_shares，将数据字典中改成：StateOwnedLegalPersonShares
 	在股本结构中，有两个表头，分别是：境内法人持股 和 境内法人股  他们 两个重复，删除 境内法人股
@@ -161,6 +165,7 @@
 	在股本结构中，有一个表头是时间，名称是Tim，数据库中没有。
 	在股本结构中，有两个表头，分别是：国家股 和 国有股  他们 两个重复，删除 国家股
 	在股本结构中，对应的数据库的表中，有多余的两个字段： 'DomesticLegalPersonShares', 'StateOwnedShares'
+	PS：里面有很多内容是NULL。。
 
 	25、税率明细
 	在税率明细中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
@@ -222,6 +227,7 @@
 	在新股发行中，有两个向基金配售数量，删除其中一个。
 	在新股发行中，有两个面值，删除其中一个。
 	在新股发型的数据库的表中，还有几个多余的字段，分别是：'Issue_price_yuan', 'Issue_expenses_yuan', 'Issue_number_gu', 'The_number_of_funds_to_the_fund_gu', 'denomination_yuan'
+	ps：里面有很多的内容是NULL。。
 
 	38、账款明细
 	在账款明细中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
@@ -245,14 +251,16 @@
 	42、账龄结构
 	在账龄结构中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
 
-	43、资产减值表
+	43、 资产减值表
 	在资产减值表中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
 	在资产减值表中，有一个表头是可供出售金融资产减值准备 ，数据库中是ProvisionForImpairmentOfFinancialAssetsAvailableForSale， 数据字典中是Provision_for_impairment_of_financial_assets_available_for_sale ，将数据字典中改成：ProvisionForImpairmentOfFinancialAssetsAvailableForSale
 
-	44、新三板分红配股
+	44、新三板分红配股   
 	在新三板分红配股中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
 	在新三板分红配股中，有一个表头是税前红利下限（股票币种）（元），数据库中是Lower_pre_tax_dividend， 数据字典中是Lower pre tax dividend ，将数据字典中改成：Lower_pre_tax_dividend
 	在新三板分红配股中，有一个表头是 税前红利下限（人民币）（元），但是数据库中命名是Lower_pre_tax_dividend_RMB，数据字典中是：Lower pre tax dividend， 将它改成 ：  Lower_pre_tax_dividend_RMB
+
+	PS：这个表可能也有问题，因为里面大部分的是NULL。
 
 	45、流通股东
 	在流通股东中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
@@ -263,7 +271,11 @@
 	47、盈利预测
 	在盈利预测中，有一个表头是公司代码，数据库中是Company_code，数据字典中是Stock_code，将数据字典中改成：Company_code
 
-	48、利润趋势
+	48、资产负债表
+	    这个资产负债表的插入可能有问题，因为数据好多是空或者是0.000000
+
+	49、 利润趋势
 	数据字典中没有利润趋势这个表，但是数据库中有，表名是： profittrend，他的字段是： 'SingleQuarter_sales_margin', 'SingleQuarter_ROE', 'Company_code', 'SingleQuarter_cashflow_fromInvestActivity', 'SingleQuarter_ROA', 'Reporting_period', 'SingleQuarter_operating_cost', 'SingleQuarter_total_operating_cost', 'SingleQuarter_cashflow_fromOPActivity', 'SingleQuarter_total_profit', 'SingleQuarter_total_operating_income', 'SingleQuarter_gross_margin', 'SingleQuarter_netIncrease_InCash', 'SingleQuarter_netProfit_belongtoParent', 'SingleQuarter_cashflow_fromFinanceActivity', 'SingleQuarter_EPS', 'SingleQuarter_operating_profit', 'SingleQuarter_operating_income', 'SingleQuarter_net_profit'
 
-	49、现金流量报告
+
+	
