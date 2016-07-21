@@ -2,6 +2,9 @@
 import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
+from openpyxl import Workbook
+from openpyxl.writer.excel import ExcelWriter
+from openpyxl import load_workbook
 import csv
 import os
 import re
@@ -69,6 +72,50 @@ def readCsvFiles(tableDic_):
 	for item in tableDic_:
 		print 'the table is : ' +item 
 		print tableDic_[item]
+def readXlsxFiles(tableDic_):
+	"'用来读取某一个文件夹下的所有xlsl文件，然后和数据库生成的字典进行比较"
+	FolderPath = './csvFiles'
+	Files = os.listdir(FolderPath)
+	for file in Files:
+		file = os.path.join(FolderPath,file)
+		fileReader = load_workbook(file)
+		for sheet in fileReader.get_sheet_names():
+			tableName = ''
+			sheetRanges = fileReader[sheet]
+			for row in sheetRanges:
+				if row =='':
+					break
+				else:
+					# print row
+					# import pdb
+					# pdb.set_trace()
+					column = row[1].value.strip()
+					tableName = row[3].value.strip()
+					# line = row.split(',')
+					# column = line[1]
+					# if tableName == '' and len(line) ==4:
+					# 	tableName = line[3].strip()
+					# elif tableName == '' and len(line) ==5:
+					# 	tableName = line[4].strip()
+					# else:
+					# 	#do nothing
+					# 	a= line[1]
+					if column == 'None':
+						print file
+						print 'the colunm is None ' + tableName
+						break
+					if column in tableDic_[tableName]:
+						tableDic_[tableName].remove(column)
+					else:
+						print 'the column is not in tabdic : '+column
+						print 'the file is '+ file
+						print 'the table name is  '+ tableName
+	for item in tableDic_:
+		if len(tableDic_[item]) == 0 :
+			continue
+		else:
+			print 'the table is  '+item
+			print tableDic_[item]
 
 def readDataDicCSVFile(tableDic_):
 	filePath = './dataDic.csv'
@@ -103,10 +150,62 @@ def readDataDicCSVFile(tableDic_):
 		print 'the table is  ' + item
 		print tableDic_[item]
 
+def  writeToOnCSv():
+	"'用来读取某一个文件夹下的所有xlsl文件，然后写入一个csv文件"
+	FolderPath = './csvFiles'
+	csvFileName = 'allToOne.csv'
+	csvFile = open(csvFileName,'wb')
+	csvFileWriter = csv.writer(csvFile)
+	Files = os.listdir(FolderPath)
+	index =0
+	for file in Files:
+		fileName = file.strip('.xlsx')
+		print fileName
+		file = os.path.join(FolderPath,file)
+		fileReader = load_workbook(file)
+		for sheet in fileReader.get_sheet_names():
+			sheetRanges = fileReader[sheet]
+			for row in sheetRanges:
+				if row =='':
+					break
+				else:
+					index = index + 1
+					rowContainer = []
+					for cell in row:
+						try:
+							cell.value.strip()
+							rowContainer.append(cell.value.strip())
+						except Exception, e:
+							rowContainer.append(' ')
+						# import pdb
+						# pdb.set_trace()
+
+						# if cell.value.strip():
+						# 	pass
+						# else:
+						# 	print 'the file is '+ file
+						# rowContainer.append(cell.value.strip())
+					rowContainer.append(fileName)
+					csvFileWriter.writerow(rowContainer)
+					# column = row[1].value.strip()
+					# tableName = row[3].value.strip()
+					# if column == 'None':
+					# 	print file
+					# 	print 'the colunm is None ' + tableName
+					# 	break
+	print index
+
+def EngToCN():
+	"'此函数用来生产中英文对照表"
+
+
+
 if __name__ == '__main__':
-	tableDic = getTableDic()
+	# tableDic = getTableDic()
 	# print tableDic
 	# readCsvFiles(tableDic)
-	readDataDicCSVFile(tableDic)
+	# readDataDicCSVFile(tableDic)
+	# readXlsxFiles(tableDic)
+	writeToOnCSv()
 
 
