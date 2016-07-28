@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="height:500px;width:1000px"></div>
+    <!-- ECharts单文件引入 -->
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <script type="text/javascript">
+    	// 路径配置
+        //接受Django发来的字典数据
+        var newsCompanyReportNumberDict = {{ newsCompanyReportNumberDict | safe }};
+        var companyName = {{  companyName | safe }};
+          require.config({
+               paths: {
+                    echarts: 'http://echarts.baidu.com/build/dist'
+                }
+           });
+
+            // 使用
+            require(
+                [
+                    'echarts',
+                    'echarts/chart/bar',
+                    'echarts/chart/pie',
+                    'echarts/chart/line',
+                ],
+                function (ec) {
+                    // 基于准备好的dom，初始化echarts图表
+                    var myChart = ec.init(document.getElementById('main')); 
+
+                    var timelineData = ['2009','2010','2011','2012','2013','2014','2015','2016']
+                    var legendData = ['腾讯证券','搜狐财经','凤凰财经']
+
+                    option = {
+                        timeline : {
+                            data : timelineData,
+                            label : {
+                                formatter : function(s) {
+                                    return s.slice(0, 7);
+                                }
+                            }
+                        },
+                        options : [
+                            {
+                                title : {
+                                    text: '公司报道量变化'
+                                },
+                                tooltip : {
+                                    trigger: 'item',
+                                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                },
+                                legend: {
+                                    data:legendData
+                                },
+                                toolbox: {
+                                    show : true,
+                                    feature : {
+                                        mark : {show: true},
+                                        dataView : {show: true, readOnly: false},
+                                        magicType : {
+                                            show: true, 
+                                            type: ['pie', 'funnel'],
+                                            option: {
+                                                funnel: {
+                                                    x: '25%',
+                                                    width: '50%',
+                                                    funnelAlign: 'left',
+                                                    max: 1700
+                                                }
+                                            }
+                                        },
+                                        restore : {show: true},
+                                        saveAsImage : {show: true}
+                                    }
+                                },
+                            },
+                        ]
+                    };
+
+                    for(i in timelineData){
+                        year = timelineData[i]
+                        series = []
+                        tmpSeriesObj = {}
+                        tmpSeriesObj.name = '公司报道量变化'
+                        tmpSeriesObj.type = 'pie'
+                        if (year in newsCompanyReportNumberDict) {
+                             tmpDict = newsCompanyReportNumberDict[year]
+                             seriesData = []
+                             for(index in legendData){
+                                reportCompany = legendData[index]
+                                value = tmpDict[reportCompany]
+                                tmpdataObj = {}
+                                tmpdataObj.value = value
+                                tmpdataObj.name = reportCompany
+                                seriesData.push(tmpdataObj)
+                             }
+                             tmpSeriesObj.data = seriesData
+                             if(i ==0){  //处理第一个series
+                                tmpSeriesObj.center = ['50%','45%']
+                                tmpSeriesObj.radius = '50%'
+                                series.push(tmpSeriesObj)
+                                option.options[0].series = series
+                             }
+                             else{
+                                series.push(tmpSeriesObj)
+                                tmpObj = {}
+                                tmpObj.series = series
+
+                                option.options.push(tmpObj)
+                             }
+                        }
+                        else{
+                            continue
+                        }
+                    }
+
+                   myChart.setOption(option); 
+                }
+            );
+    </script>
+</body>

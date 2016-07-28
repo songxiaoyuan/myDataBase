@@ -1,6 +1,8 @@
 #-*- coding:utf-8 -*-
 import os
 import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 import csv
 import MySQLdb
 
@@ -8,25 +10,24 @@ def insertInoDataBase():
 	try:
 		db = MySQLdb.connect(host = "localhost",user = "root",passwd="111111",db="test", charset='utf8')
 		cursor = db.cursor()
-		csvPath = './data.csv'
+		csvPath = './news_count_all.csv'
 		csvFile = open(csvPath)
 		index = 1
 		for line in csvFile:
-			if index ==1:
-				index = index +1
-				continue
-			else :
-				cells =line.split(',')
-				insertRow = []
-				for x in xrange(0,7):
-					insertRow.append(cells[x].strip())
-				# print len(insertRow)
-				# import pdb
-				# pdb.set_trace()
-				insertSql = 'insert into investmentrelation values(%s,%s,%s,%s,%s,%s,%s)'
-				cursor.execute(insertSql,insertRow)
-				# if index ==2 :
-				# 	break
+			cells =line.split(',')
+			insertRow = []
+			for x in xrange(0,3):
+				# print type(cells[x].strip())
+				# print cells[x].strip()
+				# tmp = cells[x].decode('utf-8')
+				insertRow.append(cells[x].strip())
+			print len(insertRow)
+			# import pdb
+			# pdb.set_trace()
+			insertSql = 'insert into newsyearcountall values(%s,%s,%s)'
+			cursor.execute(insertSql,insertRow)
+			# if index ==2 :
+			# 	break
 		db.commit()
 		cursor.close()
 		db.close()

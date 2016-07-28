@@ -1,0 +1,5 @@
+做这个项目，首先是用Django的搭建方式，学习project 和app各自分开以及文件组织的方式。
+学习python代码的书写和组织。用Python 来管理数据库
+学习Echarts画图
+配置1： 因为要整个像没有一个static文件，也就是DataConfig.js，所以需要配置STATIC_URL = '/static/'，并且注意是上一个路径。。
+配置2：在每一个views里面需要引入数据库的包，但是 需要配置搜索Python包的路径，使得可以找到，这个路径必须是据对的路径。

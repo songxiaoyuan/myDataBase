@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="height:500px;width:800px"></div>
+    <!-- ECharts单文件引入 -->
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <script type="text/javascript" src="/static/js/ConfigData.js"></script>
+    <script type="text/javascript">
+    	// 路径配置
+        //接受Django发来的字典数据
+        var keyWordsArray = {{ keyWordsArray | safe }};
+        var companyName = {{  companyName | safe }};
+        require.config({
+             paths: {
+                  echarts: 'http://echarts.baidu.com/build/dist'
+              }
+         });
+
+          // 使用
+          require(
+              [
+                  'echarts',
+                  'echarts/chart/force',
+                  'echarts/chart/chord',
+              ],
+              function (ec) {
+                  // 基于准备好的dom，初始化echarts图表
+                  var myChart = ec.init(document.getElementById('main')); 
+
+                  option = {
+                         title : {
+                             text: '关键热词',
+                             x:'right',
+                             y:'bottom'
+                         },
+                         tooltip : {
+                              trigger: 'item',
+                              formatter: '{a} : {b}'
+                          },
+                          toolbox: {
+                              show : true,
+                              feature : {
+                                  restore : {show: true},
+                                  magicType: {show: true, type: ['force', 'chord']},
+                                  saveAsImage : {show: true}
+                              }
+                          },
+                  };
+
+                  ConfigData.CreateDataOfKeyHotWords(option,companyName,keyWordsArray);
+
+                 myChart.setOption(option); 
+              }
+          );
+    </script>
+</body>

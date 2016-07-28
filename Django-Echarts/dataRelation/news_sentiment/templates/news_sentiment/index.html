@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="height:500px;width:1000px"></div>
+    <!-- ECharts单文件引入 -->
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <script type="text/javascript">
+    	// 路径配置
+        //接受Django发来的字典数据 key是year。然后是一个数组，第一个代表正向。第二个代表负向
+        var newsSentimentDict = {{ newsSentimentDict | safe }};
+        var companyName = {{  companyName | safe }};
+          require.config({
+               paths: {
+                    echarts: 'http://echarts.baidu.com/build/dist'
+                }
+           });
+
+            // 使用
+            require(
+                [
+                    'echarts',
+                    'echarts/chart/bar',
+                    'echarts/chart/line',
+                    'echarts/chart/pie',
+                      'echarts/chart/funnel',
+                ],
+                function (ec) {
+                    // 基于准备好的dom，初始化echarts图表
+                    var myChart = ec.init(document.getElementById('main')); 
+                    var legendData = ['2014','2015','2016']
+                    var labelTop = {
+                        normal : {
+                            label : {
+                                show : true,
+                                position : 'center',
+                                formatter : '{b}',
+                                textStyle: {
+                                    baseline : 'bottom'
+                                }
+                            },
+                            labelLine : {
+                                show : false
+                            }
+                        }
+                    };
+                    var labelFromatter = {
+                        normal : {
+                            label : {
+                                formatter : function (params){
+                                    return 100 - params.value + '%'
+                                },
+                                textStyle: {
+                                    baseline : 'top'
+                                }
+                            }
+                        },
+                    }
+                    var labelBottom = {
+                        normal : {
+                            color: '#ccc',
+                            label : {
+                                show : true,
+                                position : 'center'
+                            },
+                            labelLine : {
+                                show : false
+                            }
+                        },
+                        emphasis: {
+                            color: 'rgba(0,0,0,0)'
+                        }
+                    };
+                    var radius = [40, 55];
+                    option = {
+                        legend: {
+                            x : 'center',
+                            y : 'bottom',
+                            data:legendData
+                        },
+                        title : {
+                            text: '上市公司资讯情感指数',
+                            subtext: '来自嗅金资讯',
+                            x: 'center'
+                        },
+                        toolbox: {
+                            show : true,
+                            feature : {
+                                dataView : {show: true, readOnly: false},
+                                magicType : {
+                                    show: true, 
+                                    type: ['pie', 'funnel'],
+                                    option: {
+                                        funnel: {
+                                            width: '20%',
+                                            height: '30%',
+                                            itemStyle : {
+                                                normal : {
+                                                    label : {
+                                                        formatter : function (params){
+                                                            return 'other\n' + params.value + '%\n'
+                                                        },
+                                                        textStyle: {
+                                                            baseline : 'middle'
+                                                        }
+                                                    }
+                                                },
+                                            } 
+                                        }
+                                    }
+                                },
+                                restore : {show: true},
+                                saveAsImage : {show: true}
+                            }
+                        }
+                    };
+
+                    var seriesArray = []
+
+                    for(i in legendData){
+                        year = legendData[i]
+                        tmpSeriesObj = {}
+                        tmpSeriesObj.type = 'pie'
+                        tmpSeriesObj.radius = radius
+                        tmpSeriesObj.itemStyle = labelFromatter
+                        tmpSeriesObj.center = []
+                        centerPositon = (20 + 30*i).toString()+'%'
+                        tmpSeriesObj.x = centerPositon
+                        tmpSeriesObj.center.push(centerPositon)
+                        // tmpSeriesObj.center.push('30%')
+                        if (year in newsSentimentDict) {
+                            var positive = newsSentimentDict[year][0]
+                            var negative = newsSentimentDict[year][1]
+                            tmpDataArray = []
+                            tmpDataArrayObjPositive = {}
+                            tmpDataArrayObjPositive.name = year
+                            tmpDataArrayObjPositive.value = positive
+                            tmpDataArrayObjPositive.itemStyle = labelTop
+                            tmpDataArrayObjNegative = {}
+                            tmpDataArrayObjNegative.name = 'negative'
+                            tmpDataArrayObjNegative.value = negative
+                            tmpDataArrayObjNegative.itemStyle = labelBottom
+                            tmpDataArray.push(tmpDataArrayObjPositive)
+                            tmpDataArray.push(tmpDataArrayObjNegative)
+                            tmpSeriesObj.data = tmpDataArray
+                            seriesArray.push(tmpSeriesObj)
+                        }
+                        else{
+                            continue
+                        }
+                    }
+                                        
+                   option.series =seriesArray
+                   myChart.setOption(option); 
+                }
+            );
+    </script>
+</body>
