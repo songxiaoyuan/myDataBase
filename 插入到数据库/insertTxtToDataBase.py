@@ -10,8 +10,9 @@ def insertInoDataBase():
 	try:
 		db = MySQLdb.connect(host = "localhost",user = "root",passwd="111111",db="test", charset='utf8')
 		cursor = db.cursor()
-		Path = './news_sentiment.txt'
+		Path = './company_scope.txt'
 		File = open(Path)
+		l =1
 		while True:
 			line = File.readline()
 			if line:
@@ -19,9 +20,16 @@ def insertInoDataBase():
 				insertRow = []
 				for item in line.split('\t'):
 					insertRow.append(item.strip())
-				insertSql = 'insert into newssentiment values(%s,%s,%s)'
+				insertSql = 'insert into companyscope values(%s,%s)'
 				cursor.execute(insertSql,insertRow)
-				print insertRow
+				if insertRow[0] =='000002':
+					print insertRow
+				# if l==1:
+				# 	print insertRow
+				# 	l +=1
+				# else:
+				# 	break;
+				# print insertRow
 			else:
 				break
 		# for line in csvFile:
@@ -57,7 +65,7 @@ if __name__ == '__main__':
 # 		Year   date
 # 		AcquireeName  char(100)
 # 		DateToGetStock  date
-# 		CostToGetStock  double(30,10)
+		# CostToGetStock  double(30,10)
 # 		ProportionOfGetStock  double(30,10)
 # 		StyleOfGetStock  char(100)
 # 	)'

@@ -48,6 +48,8 @@ INSTALLED_APPS = (
     'news_sentiment',
     'news_source',
     'news_year_count',
+    'company_scope',
+    'company_competitor',
 )
 
 MIDDLEWARE_CLASSES = (

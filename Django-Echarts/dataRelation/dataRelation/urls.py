@@ -16,6 +16,8 @@ urlpatterns = patterns('',
     url(r'^get_news_sentiment', 'news_sentiment.views.home', name='home'),
     url(r'^get_news_source', 'news_source.views.home', name='home'),
     url(r'^get_news_year_count', 'news_year_count.views.home', name='home'),
+    url(r'^get_company_scope', 'company_scope.views.home', name='home'),
+    url(r'^get_company_competitor', 'company_competitor.views.home', name='home'),
 
     url(r'^admin/', include(admin.site.urls)),
 )

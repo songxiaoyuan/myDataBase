@@ -51,7 +51,9 @@
                         normal : {
                             label : {
                                 formatter : function (params){
-                                    return 100 - params.value + '%'
+                                	console.log('the params is !!!!!!!!!!!!' + params)
+                                	console.log(params)
+                                    return 100 - params.percent + '%'
                                 },
                                 textStyle: {
                                     baseline : 'top'
@@ -101,7 +103,7 @@
                                                 normal : {
                                                     label : {
                                                         formatter : function (params){
-                                                            return 'other\n' + params.value + '%\n'
+                                                            return 'other\n' + params.percent + '%\n'
                                                         },
                                                         textStyle: {
                                                             baseline : 'middle'

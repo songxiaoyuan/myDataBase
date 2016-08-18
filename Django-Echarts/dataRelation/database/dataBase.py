@@ -136,6 +136,19 @@ class DataBase(object):
 			# returnArray.append(keyword)
 		return returnArray
 
+	def getScopeFromCompanyScope(self,companyCode_):
+		"'this is used to get the scope from the table companyscope"
+		getInfomation = ('scope',companyCode_)
+		sql = 'select %s from companyscope where Company_code = %s'%getInfomation
+		self.__CURSOR__.execute(sql)
+		data = self.__CURSOR__.fetchall()
+
+		returnArray = []
+		for row in data:
+			returnArray = row[0].split(';')
+			# returnArray.append(keyword)
+		return returnArray
+
 	def getInformationFromNewsSourceCount(self,companyCode_):
 		"'this is used to get information through companyCode, the information is  tensource"
 		getInfomation = ('tensource',companyCode_)
@@ -277,7 +290,9 @@ if __name__ == '__main__':
 	companyname = database.getCompanyName('601900')
 	print companyname
 	newstimecount = database.getInformationFromCompanyReportNumberChange('000002')
-	print newstimecount
+	# print newstimecount
+	array = database.getScopeFromCompanyScope('000099')
+	print array
 	# print companyname==None
 	# returnDic = database.getInformationFromInvestmentRelation('000005')
 	# print len(returnDic)
